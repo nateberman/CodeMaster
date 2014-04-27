@@ -113,4 +113,98 @@
 - (IBAction)buttonMenu:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *buttonMenu;
 
+//actions for each of our centerPanel view buttons
+- (IBAction)buttonFlip:(id)sender;
+- (IBAction)buttonPlay:(id)sender;
+- (IBAction)buttonDifficulty:(id)sender;
+- (IBAction)buttonTutorial:(id)sender;
+- (IBAction)buttonCredits:(id)sender;
+- (IBAction)buttonBack:(id)sender;
+- (IBAction)buttonAllowDuplicates:(id)sender;
+- (IBAction)buttonRandomizeHints:(id)sender;
+
+//buttons for our 6 choice botPanelView (default botPanelView)
+- (IBAction)choiceOneButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *choiceOneButton;
+- (IBAction)choiceTwoButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *choiceTwoButton;
+- (IBAction)choiceThreeButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *choiceThreeButton;
+- (IBAction)choiceFourButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *choiceFourButton;
+- (IBAction)choiceFiveButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *choiceFiveButton;
+- (IBAction)choiceSixButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *choiceSixButton;
+
+//////////////////////////////////////////////////
+//setup for attempt row views
+//.....Attempt A
+@property (strong, nonatomic) IBOutlet UIView *attemptAView;
+- (IBAction)holeOneA:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeOneA;
+- (IBAction)holeTwoA:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeTwoA;
+- (IBAction)holeThreeA:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeThreeA;
+- (IBAction)holeFourA:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeFourA;
+//.....Attempt B
+@property (strong, nonatomic) IBOutlet UIView *attemptBView;
+- (IBAction)holeOneB:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeOneB;
+- (IBAction)holeTwoB:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeTwoB;
+- (IBAction)holeThreeB:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeThreeB;
+- (IBAction)holeFourB:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeFourB;
+//.....Attempt C
+@property (strong, nonatomic) IBOutlet UIView *attemptCView;
+- (IBAction)holeOneC:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeOneC;
+- (IBAction)holeTwoC:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeTwoC;
+- (IBAction)holeThreeC:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeThreeC;
+- (IBAction)holeFourC:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeFourC;
+//.....Attempt D
+@property (strong, nonatomic) IBOutlet UIView *attemptDView;
+- (IBAction)holeOneD:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeOneD;
+- (IBAction)holeTwoD:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeTwoD;
+- (IBAction)holeThreeD:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeThreeD;
+- (IBAction)holeFourD:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeFourD;
+//.....Attempt E
+@property (strong, nonatomic) IBOutlet UIView *attemptEView;
+- (IBAction)holeOneE:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeOneE;
+- (IBAction)holeTwoE:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeTwoE;
+- (IBAction)holeThreeE:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeThreeE;
+- (IBAction)holeFourE:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeFourE;
+//.....Attempt F
+@property (strong, nonatomic) IBOutlet UIView *attemptFView;
+- (IBAction)holeOneF:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeOneF;
+- (IBAction)holeTwoF:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeTwoF;
+- (IBAction)holeThreeF:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeThreeF;
+- (IBAction)holeFourF:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *holeFourF;
+//////////////////////////////////////////////////
+
+//submit button
+- (IBAction)buttonSubmit:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *buttonSubmit;
+
+- (void)compareCodeAnswerOne: (UIImageView *)one answerTwo: (UIImageView *)two answerThree: (UIImageView *)three answerFour: (UIImageView *)four;
+
 @end
