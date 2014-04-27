@@ -1,0 +1,147 @@
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "10R-E7-783"; */
+"10R-E7-783.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "13a-iC-Btd"; */
+"13a-iC-Btd.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "17J-zx-5NX"; */
+"17J-zx-5NX.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "17y-EO-qT6"; */
+"17y-EO-qT6.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Tutorial"; ObjectID = "1xf-ZI-tiO"; */
+"1xf-ZI-tiO.normalTitle" = "Tutorial";
+
+/* Class = "IBUILabel"; text = "Randomize Hints"; ObjectID = "2kO-bh-Up9"; */
+"2kO-bh-Up9.text" = "Randomize Hints";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "3D1-hT-uMA"; */
+"3D1-hT-uMA.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Play"; ObjectID = "4Mf-UJ-qiK"; */
+"4Mf-UJ-qiK.normalTitle" = "Play";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "4j5-CE-qBQ"; */
+"4j5-CE-qBQ.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "4zO-RA-DNT"; */
+"4zO-RA-DNT.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "6a4-ai-s5D"; */
+"6a4-ai-s5D.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "6zL-Wh-vKj"; */
+"6zL-Wh-vKj.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "AAQ-yl-8gk"; */
+"AAQ-yl-8gk.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "BUl-ui-sfq"; */
+"BUl-ui-sfq.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Difficulty"; ObjectID = "C7U-3V-rUM"; */
+"C7U-3V-rUM.normalTitle" = "Difficulty";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "Dy9-Uq-Bss"; */
+"Dy9-Uq-Bss.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "EhV-87-RPD"; */
+"EhV-87-RPD.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "Home"; ObjectID = "ElC-z9-WgJ"; */
+"ElC-z9-WgJ.text" = "Home";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "F7Q-gh-PLB"; */
+"F7Q-gh-PLB.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "Tutorial"; ObjectID = "FI1-CY-Kil"; */
+"FI1-CY-Kil.text" = "Tutorial";
+
+/* Class = "IBUIButton"; normalTitle = "Credits"; ObjectID = "HaH-6y-fN5"; */
+"HaH-6y-fN5.normalTitle" = "Credits";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "HbI-ve-BIO"; */
+"HbI-ve-BIO.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "Il8-PE-v1h"; */
+"Il8-PE-v1h.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Dupes"; ObjectID = "MFw-ii-T4e"; */
+"MFw-ii-T4e.normalTitle" = "Dupes";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "MPF-wf-Qfa"; */
+"MPF-wf-Qfa.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "N3f-ll-HbM"; */
+"N3f-ll-HbM.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "NkF-gG-zCz"; */
+"NkF-gG-zCz.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "P0c-HX-ybe"; */
+"P0c-HX-ybe.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "PIz-Y0-uev"; */
+"PIz-Y0-uev.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Rand"; ObjectID = "QaX-Wb-Pkj"; */
+"QaX-Wb-Pkj.normalTitle" = "Rand";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "SaB-Rg-2g1"; */
+"SaB-Rg-2g1.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "VWO-zv-gE1"; */
+"VWO-zv-gE1.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "Z8d-Z6-u5o"; */
+"Z8d-Z6-u5o.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "ZYt-4S-zpC"; */
+"ZYt-4S-zpC.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "Credits"; ObjectID = "a3t-e1-qkN"; */
+"a3t-e1-qkN.text" = "Credits";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "cai-gS-lTW"; */
+"cai-gS-lTW.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "dWd-Gq-xT9"; */
+"dWd-Gq-xT9.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "dZm-ql-wtX"; */
+"dZm-ql-wtX.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "h0c-dK-P6y"; */
+"h0c-dK-P6y.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "hXT-FT-rTe"; */
+"hXT-FT-rTe.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "i52-dG-TRQ"; */
+"i52-dG-TRQ.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "Difficulty"; ObjectID = "jN5-4q-bo4"; */
+"jN5-4q-bo4.text" = "Difficulty";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "pgi-VY-eJE"; */
+"pgi-VY-eJE.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "Allow Duplicates"; ObjectID = "qmW-fj-4PH"; */
+"qmW-fj-4PH.text" = "Allow Duplicates";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "rPq-Um-6es"; */
+"rPq-Um-6es.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "vBn-bw-mKA"; */
+"vBn-bw-mKA.normalTitle" = "Button";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "vFX-lD-4qt"; */
+"vFX-lD-4qt.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "Back"; ObjectID = "xLC-4U-usO"; */
+"xLC-4U-usO.normalTitle" = "Back";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "zcd-Fq-G90"; */
+"zcd-Fq-G90.normalTitle" = "Button";

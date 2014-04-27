@@ -75,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DEA5CA37190DAB8200EA65E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		DEBC7E67190D44280021C3AE /* CodeMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBC7E6A190D44280021C3AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEBC7E6C190D44280021C3AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -459,6 +460,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DEBC7E7D190D44280021C3AE /* Base */,
+				DEA5CA37190DAB8200EA65E4 /* en */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -563,6 +565,7 @@
 				GCC_PREFIX_HEADER = "CodeMaster/CodeMaster-Prefix.pch";
 				INFOPLIST_FILE = "CodeMaster/CodeMaster-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -576,6 +579,7 @@
 				GCC_PREFIX_HEADER = "CodeMaster/CodeMaster-Prefix.pch";
 				INFOPLIST_FILE = "CodeMaster/CodeMaster-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

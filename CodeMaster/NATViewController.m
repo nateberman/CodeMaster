@@ -21,6 +21,11 @@ bool currentGame = NO;
 // keep track of attempts
 int attemptCount = 1;
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,8 +47,10 @@ int attemptCount = 1;
     // Dispose of any resources that can be recreated.
 }
 
+
 // set up frames, panels and images
 - (void)configureLaunch {
+    
     // programmatic setup to account for multiple screen sizes
     // create UIImage and define stretchable pixel location (middle pixel in each dimension)
     UIImage *frameImage = [[UIImage imageNamed:@"FrameVignette.png"] stretchableImageWithLeftCapWidth:159 topCapHeight:239];
@@ -167,7 +174,7 @@ int attemptCount = 1;
                           animations:^{
                               // 4inch screen
                               if([[UIScreen mainScreen] bounds].size.height == 568){
-                                  topDoorView.frame = CGRectMake(0, -330, 320, 301);
+                                  topDoorView.frame = CGRectMake(0, -350, 320, 301);
                                   botDoorView.frame = CGRectMake(0, 568, 320, 287);
                                   gameOverView.frame = CGRectMake(80, -90, 160, 90);
                               }
