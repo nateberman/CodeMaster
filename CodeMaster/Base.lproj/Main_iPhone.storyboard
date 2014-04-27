@@ -615,6 +615,77 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckO-vY-pZy" userLabel="botPanelView">
+                                <rect key="frame" x="13" y="470" width="294" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="botPanel.png" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-1v-RFZ" userLabel="botPanel">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="91"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaB-Rg-2g1" userLabel="Button - choiceOne">
+                                        <rect key="frame" x="10" y="26" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceOneButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HaF-Ax-3PK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-Fq-G90" userLabel="Button - choiceTwo">
+                                        <rect key="frame" x="56" y="26" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceTwoButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="omx-dU-71I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-zv-gE1" userLabel="Button - choiceThree">
+                                        <rect key="frame" x="101" y="26" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceThreeButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="A21-W0-i5Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17J-zx-5NX" userLabel="Button - choiceFour">
+                                        <rect key="frame" x="147" y="26" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceFourButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pYT-wx-oTk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7Q-gh-PLB" userLabel="Button - choiceFive">
+                                        <rect key="frame" x="193" y="26" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceFiveButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AfU-Q9-GIr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pgi-VY-eJE" userLabel="Button - choiceSix">
+                                        <rect key="frame" x="239" y="26" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="choiceSixButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cgC-DU-xad"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -628,6 +699,8 @@
                         <outlet property="attemptFView" destination="Tul-0q-MN1" id="xou-bf-cd8"/>
                         <outlet property="backgroundBlack" destination="5p2-U2-kkp" id="Yxo-5Z-j0I"/>
                         <outlet property="backgroundHex" destination="uZO-jh-Glk" id="biu-a7-QIK"/>
+                        <outlet property="botPanel" destination="rKj-1v-RFZ" id="pOS-NI-YZA"/>
+                        <outlet property="botPanelView" destination="ckO-vY-pZy" id="H9h-6n-TOw"/>
                         <outlet property="buttonAllowDuplicates" destination="MFw-ii-T4e" id="eN8-4G-a5O"/>
                         <outlet property="buttonCredits" destination="HaH-6y-fN5" id="ge2-Xg-0fz"/>
                         <outlet property="buttonDifficulty" destination="C7U-3V-rUM" id="ZpJ-SE-7hL"/>
@@ -641,6 +714,12 @@
                         <outlet property="centerPanelPlay" destination="gbI-5R-aqH" id="T1i-73-Im6"/>
                         <outlet property="centerPanelTutorial" destination="Dpi-D8-uwU" id="Z4q-OP-oN6"/>
                         <outlet property="centerPanelView" destination="Lu8-Ev-X6K" id="3jx-Zc-OMC"/>
+                        <outlet property="choiceFiveButton" destination="F7Q-gh-PLB" id="jOn-hR-oWY"/>
+                        <outlet property="choiceFourButton" destination="17J-zx-5NX" id="ck6-3u-Qly"/>
+                        <outlet property="choiceOneButton" destination="SaB-Rg-2g1" id="ci7-bC-6nY"/>
+                        <outlet property="choiceSixButton" destination="pgi-VY-eJE" id="sIV-pd-Sf2"/>
+                        <outlet property="choiceThreeButton" destination="VWO-zv-gE1" id="alp-s4-nLj"/>
+                        <outlet property="choiceTwoButton" destination="zcd-Fq-G90" id="ZyT-Zg-SBr"/>
                         <outlet property="creditsFrame" destination="na8-b0-5zt" id="qhE-MP-5hS"/>
                         <outlet property="difficultyFrame" destination="23s-Ov-R5f" id="ZTO-nt-f2Q"/>
                         <outlet property="difficultyLabel" destination="jN5-4q-bo4" id="MH0-xc-Qbf"/>
@@ -728,6 +807,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="botPanel.png" width="294" height="91"/>
         <image name="centerFieldView.png" width="294" height="301"/>
         <image name="hexBG-568h@2x.png.png" width="339" height="937"/>
         <image name="hintEmpty.png" width="19" height="19"/>
