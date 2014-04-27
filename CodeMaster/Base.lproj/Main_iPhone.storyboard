@@ -26,8 +26,10 @@
         <!--Navigation Controller-->
         <scene sceneID="oPt-96-Tga">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ebl-Lu-N7G" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ebl-Lu-N7G" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qyg-QZ-3Nj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
