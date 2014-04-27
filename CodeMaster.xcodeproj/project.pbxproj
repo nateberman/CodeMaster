@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEA5CA39190DACAA00EA65E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA5CA38190DACAA00EA65E4 /* QuartzCore.framework */; };
 		DEBC7E6B190D44280021C3AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBC7E6A190D44280021C3AE /* Foundation.framework */; };
 		DEBC7E6D190D44280021C3AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBC7E6C190D44280021C3AE /* CoreGraphics.framework */; };
 		DEBC7E6F190D44280021C3AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEBC7E6E190D44280021C3AE /* UIKit.framework */; };
@@ -76,6 +77,7 @@
 
 /* Begin PBXFileReference section */
 		DEA5CA37190DAB8200EA65E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		DEA5CA38190DACAA00EA65E4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DEBC7E67190D44280021C3AE /* CodeMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBC7E6A190D44280021C3AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DEBC7E6C190D44280021C3AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA5CA39190DACAA00EA65E4 /* QuartzCore.framework in Frameworks */,
 				DEBC7E6D190D44280021C3AE /* CoreGraphics.framework in Frameworks */,
 				DEBC7E6F190D44280021C3AE /* UIKit.framework in Frameworks */,
 				DEBC7E6B190D44280021C3AE /* Foundation.framework in Frameworks */,
@@ -185,6 +188,7 @@
 		DEBC7E69190D44280021C3AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEA5CA38190DACAA00EA65E4 /* QuartzCore.framework */,
 				DEBC7E6A190D44280021C3AE /* Foundation.framework */,
 				DEBC7E6C190D44280021C3AE /* CoreGraphics.framework */,
 				DEBC7E6E190D44280021C3AE /* UIKit.framework */,

@@ -21,10 +21,6 @@ bool currentGame = NO;
 // keep track of attempts
 int attemptCount = 1;
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    self.navigationController.navigationBar.hidden = YES;
-}
 
 - (void)viewDidLoad
 {
@@ -190,7 +186,164 @@ int attemptCount = 1;
                           }];
 }
 
-- (void)randomLight{
+// if currentGame = YES do not change the secret code
+// else run new game method
+- (IBAction)buttonPlay:(id)sender{
+    if(!currentGame){
+        [self newGame];
+    }
+    [UIView transitionWithView:centerPanelView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromTop
+                    animations:^{
+                        centerPanelHome.hidden = YES;
+                        centerPanelPlay.hidden = NO;
+                        centerPanelActive = centerPanelPlay;
+                    } completion:^(BOOL finished) {
+                        [self showTopAndBot];
+                    }];
+    
+    [self swoosh];
+}
+
+// set points of user interaction
+// reset image states
+// create new secret code
+// set currentGame = YES
+// reset number of attempts
+- (void)newGame {
+    //set up our codeCover
+    codeCover.alpha = 0;
+    
+    //lets turn on our 1st attemptView so the user can interact with the game
+    [_attemptAView setUserInteractionEnabled:YES];
+    
+    //lets turn off our 2nd+ attempt Views so the user can only interact with the first set of code holes
+    [_attemptBView setUserInteractionEnabled:NO];
+    [_attemptCView setUserInteractionEnabled:NO];
+    [_attemptDView setUserInteractionEnabled:NO];
+    [_attemptEView setUserInteractionEnabled:NO];
+    [_attemptFView setUserInteractionEnabled:NO];
+    
+    //reset all of our hole states so they show the proper images as set in our configureLaunch method
+    _holeOneA.selected = NO;
+    _holeTwoA.selected = NO;
+    _holeThreeA.selected = NO;
+    _holeFourA.selected = NO;
+    _holeOneB.selected = NO;
+    _holeTwoB.selected = NO;
+    _holeThreeB.selected = NO;
+    _holeFourB.selected = NO;
+    _holeOneC.selected = NO;
+    _holeTwoC.selected = NO;
+    _holeThreeC.selected = NO;
+    _holeFourC.selected = NO;
+    _holeOneD.selected = NO;
+    _holeTwoD.selected = NO;
+    _holeThreeD.selected = NO;
+    _holeFourD.selected = NO;
+    _holeOneE.selected = NO;
+    _holeTwoE.selected = NO;
+    _holeThreeE.selected = NO;
+    _holeFourE.selected = NO;
+    _holeOneF.selected = NO;
+    _holeTwoF.selected = NO;
+    _holeThreeF.selected = NO;
+    _holeFourF.selected = NO;
+    
+    //reset all of our hint images
+    hintOneA.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintTwoA.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintThreeA.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintFourA.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintOneB.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintTwoB.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintThreeB.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintFourB.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintOneC.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintTwoC.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintThreeC.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintFourC.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintOneD.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintTwoD.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintThreeD.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintFourD.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintOneE.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintTwoE.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintThreeE.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintFourE.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintOneF.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintTwoF.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintThreeF.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hintFourF.image = [UIImage imageNamed:@"hintEmpty.png"];
+    
+    //clear our developer tool view
+    selectedImage.image = nil;
+    hint1.image = nil;
+    hint2.image = nil;
+    hint3.image = nil;
+    hint4.image = nil;
+    
+    //disable our buttonSubmit
+    [_buttonSubmit setUserInteractionEnabled:NO];
+    
+    //set our currentGame status so our settings are static
+    currentGame = YES;
+    
+    //generate a new secret code
+    [self generateCode];
+    
+    //reset attempt count
+    attemptCount = 1;
+}
+
+// generate a random secret code
+// take into account duplicate entry difficulty setting
+- (void)generateCode {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog(@"NSUserDefaults intergerForKey duplicateColorToggle is %d", [defaults integerForKey:@"duplicateColorToggle"]);
+    
+    // if duplicateColorToggle is on then easy generate code
+    if([defaults integerForKey:@"duplicateColorToggle"] == 1){
+        codeOne.image = [self randomImage].image;
+        codeTwo.image = [self randomImage].image;
+        codeThree.image = [self randomImage].image;
+        codeFour.image = [self randomImage].image;
+    }
+    // if duplicateColorToggle is off then ensure we dont duplicate any code entries
+    else {
+        codeOne.image = [self randomImage].image;
+        do {
+            codeTwo.image = [self randomImage].image;
+        } while (codeTwo.image == codeOne.image);
+        do {
+            codeThree.image = [self randomImage].image;
+        } while ((codeThree.image == codeOne.image) || (codeThree.image == codeTwo.image));
+        do {
+            codeFour.image = [self randomImage].image;
+        } while ((codeFour.image == codeOne.image) || (codeFour.image == codeTwo.image) || (codeFour.image == codeThree.image));
+    }
+}
+
+// serve a random image for our secret code
+- (UIImageView *)randomImage {
+    // create our selectable imageviews and their images
+    UIImageView *blue = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"buttonBlueHilight.png"]];
+    UIImageView *green = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"buttonGreenHilight.png"]];
+    UIImageView *yellow = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"buttonYellowHilight.png"]];
+    UIImageView *orange = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"buttonOrangeHilight.png"]];
+    UIImageView *red = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"buttonRedHilight.png"]];
+    UIImageView *teal = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"buttonTealHilight.png"]];
+    // toss em in an array
+    NSArray *imagesArray = [[NSArray alloc]initWithObjects:blue, green, yellow, orange, red, teal, nil];
+    
+    //randomly choose and return from array
+    return [imagesArray objectAtIndex:(arc4random() % imagesArray.count)];
+}
+
+// add some pizazz to the background
+- (void)randomLight {
     
 }
 @end
