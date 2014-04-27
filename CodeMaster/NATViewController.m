@@ -183,5 +183,7 @@ int attemptCount = 1;
                           }];
 }
 
-
+- (void)randomLight{
+    
+}
 @end
