@@ -42,6 +42,7 @@ int attemptCount = 1;
     // Dispose of any resources that can be recreated.
 }
 
+// set up frames, panels and images
 - (void)configureLaunch {
     // programmatic setup to account for multiple screen sizes
     // create UIImage and define stretchable pixel location (middle pixel in each dimension)
@@ -97,6 +98,90 @@ int attemptCount = 1;
     
     // center the centerPanelView regardless
     centerPanelView.center = centerPanelView.superview.center;
+    
+    // set the centerPanel to display proper contents
+    centerPanelHome.hidden = NO;
+    //
+    centerPanelPlay.hidden = YES;
+    centerPanelTutorial.hidden = YES;
+    centerPanelCredits.hidden = YES;
+    centerPanelDifficulty.hidden = YES;
+    
+    // hide debug view
+    devTestView.hidden = YES;
+    
+    // configure Difficulty contents
+    // allowDuplicates button
+    [buttonAllowDuplicates setImage:[UIImage imageNamed:@"ToggleOff.png"] forState:UIControlStateNormal];
+    [buttonAllowDuplicates setImage:[UIImage imageNamed:@"ToggleOn.png"] forState:UIControlStateSelected];
+    // randomizeHints button
+    [buttonRandomizeHints setImage:[UIImage imageNamed:@"ToggleOff.png"] forState:UIControlStateNormal];
+    [buttonRandomizeHints setImage:[UIImage imageNamed:@"ToggleOn.png"] forState:UIControlStateSelected];
+    
+    // set images for code answer choices
+    [_choiceOneButton setImage:[UIImage imageNamed:@"buttonBlueNormal.png"] forState:UIControlStateNormal];
+    [_choiceOneButton setImage:[UIImage imageNamed:@"buttonBlueHilight.png"] forState:UIControlStateSelected];
+    [_choiceTwoButton setImage:[UIImage imageNamed:@"buttonGreenNormal.png"] forState:UIControlStateNormal];
+    [_choiceTwoButton setImage:[UIImage imageNamed:@"buttonGreenHilight.png"] forState:UIControlStateSelected];
+    [_choiceThreeButton setImage:[UIImage imageNamed:@"buttonYellowNormal.png"] forState:UIControlStateNormal];
+    [_choiceThreeButton setImage:[UIImage imageNamed:@"buttonYellowHilight.png"] forState:UIControlStateSelected];
+    [_choiceFourButton setImage:[UIImage imageNamed:@"buttonOrangeNormal.png"] forState:UIControlStateNormal];
+    [_choiceFourButton setImage:[UIImage imageNamed:@"buttonOrangeHilight.png"] forState:UIControlStateSelected];
+    [_choiceFiveButton setImage:[UIImage imageNamed:@"buttonRedNormal.png"] forState:UIControlStateNormal];
+    [_choiceFiveButton setImage:[UIImage imageNamed:@"buttonRedHilight.png"] forState:UIControlStateSelected];
+    [_choiceSixButton setImage:[UIImage imageNamed:@"buttonTealNormal.png"] forState:UIControlStateNormal];
+    [_choiceSixButton setImage:[UIImage imageNamed:@"buttonTealHilight.png"] forState:UIControlStateSelected];
+    
+    // set images for code answer holes
+    [_holeOneA setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeTwoA setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeThreeA setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeFourA setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeOneB setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeTwoB setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeThreeB setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeFourB setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeOneC setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeTwoC setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeThreeC setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeFourC setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeOneD setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeTwoD setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeThreeD setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeFourD setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeOneE setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeTwoE setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeThreeE setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeFourE setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeOneF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeTwoF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeThreeF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    [_holeFourF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
 }
+
+// opening animation
+- (void)openDoors {
+    [UIImageView animateWithDuration:0.8
+                               delay:0.2
+                             options:UIViewAnimationOptionCurveEaseIn
+                          animations:^{
+                              // 4inch screen
+                              if([[UIScreen mainScreen] bounds].size.height == 568){
+                                  topDoorView.frame = CGRectMake(0, -330, 320, 301);
+                                  botDoorView.frame = CGRectMake(0, 568, 320, 287);
+                                  gameOverView.frame = CGRectMake(80, -90, 160, 90);
+                              }
+                              // 3.5inch screen
+                              else {
+                                  topDoorView.frame = CGRectMake(0, -305, 320, 301);
+                                  botDoorView.frame = CGRectMake(0, 480, 320, 287);
+                                  gameOverView.frame = CGRectMake(80, -90, 160, 90);
+                              }
+                          } completion:^(BOOL finished) {
+                              // ensure our gameOverView is hidden
+                              gameOverView.hidden = YES;
+                          }];
+}
+
 
 @end
