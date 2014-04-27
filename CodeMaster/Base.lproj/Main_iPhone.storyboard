@@ -220,35 +220,386 @@
                                                 <state key="normal" title="Button">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonSubmit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GWK-Vm-HMh"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hlw-gA-QJY" userLabel="attemptAView">
                                                 <rect key="frame" x="7" y="236" width="277" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBn-bw-mKA" userLabel="Button - holeOneA">
+                                                        <rect key="frame" x="4" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeOneA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0ZC-M6-rfl"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWd-Gq-xT9" userLabel="Button - holeTwoA">
+                                                        <rect key="frame" x="53" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeTwoA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0aO-NC-nxD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbI-ve-BIO" userLabel="Button - holeThreeA">
+                                                        <rect key="frame" x="102" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeThreeA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RVp-bW-TYI"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dy9-Uq-Bss" userLabel="Button - holeFourA">
+                                                        <rect key="frame" x="151" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeFourA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rei-ZM-2CC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="64L-eF-o4w" userLabel="hintOneA">
+                                                        <rect key="frame" x="204" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="4nw-cc-XeR" userLabel="hintTwoA">
+                                                        <rect key="frame" x="219" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="M2x-29-rF2" userLabel="hintThreeA">
+                                                        <rect key="frame" x="234" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="enH-J6-aDU" userLabel="hintFourA">
+                                                        <rect key="frame" x="249" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-nG-6fu" userLabel="attemptBView">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-63-PaM" userLabel="attemptBView">
                                                 <rect key="frame" x="7" y="190" width="277" height="47"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0c-HX-ybe" userLabel="Button - holeOneB">
+                                                        <rect key="frame" x="4" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeOneB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dpV-kS-Ufk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cai-gS-lTW" userLabel="Button - holeTwoB">
+                                                        <rect key="frame" x="53" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeTwoB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J18-60-vh8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3D1-hT-uMA" userLabel="Button - holeThreeB">
+                                                        <rect key="frame" x="102" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeThreeB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="twJ-43-FVY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3f-ll-HbM" userLabel="Button - holeFourB">
+                                                        <rect key="frame" x="151" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeFourB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oou-ah-fqh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="RAS-Hr-8zI" userLabel="hintOneB">
+                                                        <rect key="frame" x="204" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="uQj-NH-89j" userLabel="hintTwoB">
+                                                        <rect key="frame" x="219" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="73N-QD-VmR" userLabel="hintThreeB">
+                                                        <rect key="frame" x="234" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="cQH-1f-Oii" userLabel="hintFourB">
+                                                        <rect key="frame" x="249" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="99O-P2-4ia" userLabel="attemptCView">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rrO-u9-ymd" userLabel="attemptCView">
                                                 <rect key="frame" x="7" y="145" width="277" height="47"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhV-87-RPD" userLabel="Button - holeOneC">
+                                                        <rect key="frame" x="4" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeOneC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9oF-uS-UsA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13a-iC-Btd" userLabel="Button - holeTwoC">
+                                                        <rect key="frame" x="53" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeTwoC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h3l-87-4ZA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17y-EO-qT6" userLabel="Button - holeThreeC">
+                                                        <rect key="frame" x="102" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeThreeC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YvM-rS-5fp"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUl-ui-sfq" userLabel="Button - holeFourC">
+                                                        <rect key="frame" x="151" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeFourC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vrh-PK-UmN"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="l2M-RP-bg6" userLabel="hintOneC">
+                                                        <rect key="frame" x="204" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y5J-Qg-3Sc" userLabel="hintTwoC">
+                                                        <rect key="frame" x="219" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7Q-gh-4GJ" userLabel="hintThreeC">
+                                                        <rect key="frame" x="234" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-rv-WNN" userLabel="hintFourC">
+                                                        <rect key="frame" x="249" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lFI-HQ-XVh" userLabel="attemptDView">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7kO-Il-tUm" userLabel="attemptDView">
                                                 <rect key="frame" x="7" y="99" width="277" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYt-4S-zpC" userLabel="Button - holeOneD">
+                                                        <rect key="frame" x="4" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeOneD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bhp-AK-NMh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPq-Um-6es" userLabel="Button - holeTwoD">
+                                                        <rect key="frame" x="53" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeTwoD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7WR-2S-Uic"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZm-ql-wtX" userLabel="Button - holeThreeD">
+                                                        <rect key="frame" x="102" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeThreeD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iAW-sv-M0H"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a4-ai-s5D" userLabel="Button - holeFourD">
+                                                        <rect key="frame" x="151" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeFourD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Ui-F0-s8T"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="2br-a0-lcz" userLabel="hintOneD">
+                                                        <rect key="frame" x="204" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-ne-rPu" userLabel="hintTwoD">
+                                                        <rect key="frame" x="219" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="oK7-cZ-3uK" userLabel="hintThreeD">
+                                                        <rect key="frame" x="234" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="wds-hd-WjE" userLabel="hintFourD">
+                                                        <rect key="frame" x="249" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efq-Af-mc6" userLabel="attemptEView">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yr-G7-flE" userLabel="attemptEView">
                                                 <rect key="frame" x="7" y="54" width="277" height="47"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8d-Z6-u5o" userLabel="Button - holeOneE">
+                                                        <rect key="frame" x="4" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeOneE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h0y-n5-Ewt"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPF-wf-Qfa" userLabel="Button - holeTwoE">
+                                                        <rect key="frame" x="53" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeTwoE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yrq-jT-b0E"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10R-E7-783" userLabel="Button - holeThreeE">
+                                                        <rect key="frame" x="102" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeThreeE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1us-su-De3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i52-dG-TRQ" userLabel="Button - holeFourE">
+                                                        <rect key="frame" x="151" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeFourE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XYd-15-YLc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="UoY-zv-We6" userLabel="hintOneE">
+                                                        <rect key="frame" x="204" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="FyB-1e-72q" userLabel="hintTwoE">
+                                                        <rect key="frame" x="219" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="wMM-bB-5t1" userLabel="hintThreeE">
+                                                        <rect key="frame" x="234" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="glC-Rq-UKh" userLabel="hintFourE">
+                                                        <rect key="frame" x="249" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0z-ul-3vc" userLabel="attemptFView">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tul-0q-MN1" userLabel="attemptFView">
                                                 <rect key="frame" x="7" y="7" width="277" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAQ-yl-8gk" userLabel="Button - holeOneF">
+                                                        <rect key="frame" x="4" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeOneF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FqH-8U-h10"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXT-FT-rTe" userLabel="Button - holeTwoF">
+                                                        <rect key="frame" x="53" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeTwoF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lRt-WA-WFu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zO-RA-DNT" userLabel="Button - holeThreeF">
+                                                        <rect key="frame" x="102" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeThreeF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5L5-7Y-hwy"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zL-Wh-vKj" userLabel="Button - holeFourF">
+                                                        <rect key="frame" x="151" y="1" width="45" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="holeFourF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ghg-KX-fa0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="tvG-eo-lef" userLabel="hintOneF">
+                                                        <rect key="frame" x="204" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mcs-mZ-fgD" userLabel="hintTwoF">
+                                                        <rect key="frame" x="219" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="k1w-75-5bc" userLabel="hintThreeF">
+                                                        <rect key="frame" x="234" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hintEmpty.png" translatesAutoresizingMaskIntoConstraints="NO" id="Eg3-0w-ZWY" userLabel="hintFourF">
+                                                        <rect key="frame" x="249" y="16" width="15" height="15"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0c-dK-P6y" userLabel="Button - Back">
@@ -269,6 +620,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Au1-Ux-huz"/>
                     <connections>
+                        <outlet property="attemptAView" destination="Hlw-gA-QJY" id="XYh-dH-UKr"/>
+                        <outlet property="attemptBView" destination="rUY-63-PaM" id="hOG-YL-lOw"/>
+                        <outlet property="attemptCView" destination="rrO-u9-ymd" id="DS4-n3-NIB"/>
+                        <outlet property="attemptDView" destination="7kO-Il-tUm" id="22J-jG-uhY"/>
+                        <outlet property="attemptEView" destination="1yr-G7-flE" id="eBA-DX-ftx"/>
+                        <outlet property="attemptFView" destination="Tul-0q-MN1" id="xou-bf-cd8"/>
                         <outlet property="backgroundBlack" destination="5p2-U2-kkp" id="Yxo-5Z-j0I"/>
                         <outlet property="backgroundHex" destination="uZO-jh-Glk" id="biu-a7-QIK"/>
                         <outlet property="buttonAllowDuplicates" destination="MFw-ii-T4e" id="eN8-4G-a5O"/>
@@ -276,20 +633,71 @@
                         <outlet property="buttonDifficulty" destination="C7U-3V-rUM" id="ZpJ-SE-7hL"/>
                         <outlet property="buttonPlay" destination="4Mf-UJ-qiK" id="NX7-Od-sPm"/>
                         <outlet property="buttonRandomizeHints" destination="QaX-Wb-Pkj" id="RFi-DI-d5k"/>
+                        <outlet property="buttonSubmit" destination="4j5-CE-qBQ" id="zmZ-Ac-UIF"/>
                         <outlet property="buttonTutorial" destination="1xf-ZI-tiO" id="IKf-Eh-lBa"/>
                         <outlet property="centerPanelCredits" destination="dto-am-fYX" id="dDv-jW-f8E"/>
                         <outlet property="centerPanelDifficulty" destination="Kfy-0e-fYm" id="int-tf-Voo"/>
                         <outlet property="centerPanelHome" destination="3IT-5z-u4B" id="Dgw-7G-w6D"/>
+                        <outlet property="centerPanelPlay" destination="gbI-5R-aqH" id="T1i-73-Im6"/>
                         <outlet property="centerPanelTutorial" destination="Dpi-D8-uwU" id="Z4q-OP-oN6"/>
                         <outlet property="centerPanelView" destination="Lu8-Ev-X6K" id="3jx-Zc-OMC"/>
                         <outlet property="creditsFrame" destination="na8-b0-5zt" id="qhE-MP-5hS"/>
                         <outlet property="difficultyFrame" destination="23s-Ov-R5f" id="ZTO-nt-f2Q"/>
                         <outlet property="difficultyLabel" destination="jN5-4q-bo4" id="MH0-xc-Qbf"/>
+                        <outlet property="hintFourA" destination="enH-J6-aDU" id="RsJ-iW-ZjD"/>
+                        <outlet property="hintFourB" destination="cQH-1f-Oii" id="flA-yJ-bl6"/>
+                        <outlet property="hintFourC" destination="gzf-rv-WNN" id="cmb-ir-965"/>
+                        <outlet property="hintFourD" destination="wds-hd-WjE" id="4HE-rT-EP7"/>
+                        <outlet property="hintFourE" destination="glC-Rq-UKh" id="BQR-gy-Nbl"/>
+                        <outlet property="hintFourF" destination="Eg3-0w-ZWY" id="qoy-Tz-4ua"/>
+                        <outlet property="hintOneA" destination="64L-eF-o4w" id="FO8-Cz-GNi"/>
+                        <outlet property="hintOneB" destination="RAS-Hr-8zI" id="aeX-6a-0o4"/>
+                        <outlet property="hintOneC" destination="l2M-RP-bg6" id="2aR-dH-3Zh"/>
+                        <outlet property="hintOneD" destination="2br-a0-lcz" id="vcZ-eQ-um4"/>
+                        <outlet property="hintOneE" destination="UoY-zv-We6" id="5gU-3f-A6b"/>
+                        <outlet property="hintOneF" destination="tvG-eo-lef" id="94U-21-yPy"/>
+                        <outlet property="hintThreeA" destination="M2x-29-rF2" id="UUw-43-4cm"/>
+                        <outlet property="hintThreeB" destination="73N-QD-VmR" id="Hjb-P8-dQS"/>
+                        <outlet property="hintThreeC" destination="o7Q-gh-4GJ" id="gVn-1X-2yl"/>
+                        <outlet property="hintThreeD" destination="oK7-cZ-3uK" id="7Bo-fK-NbG"/>
+                        <outlet property="hintThreeE" destination="wMM-bB-5t1" id="8jT-tN-PVa"/>
+                        <outlet property="hintThreeF" destination="k1w-75-5bc" id="AcQ-Bc-hYL"/>
+                        <outlet property="hintTwoA" destination="4nw-cc-XeR" id="LrE-Zg-w5X"/>
+                        <outlet property="hintTwoB" destination="uQj-NH-89j" id="iqf-oI-jzE"/>
+                        <outlet property="hintTwoC" destination="Y5J-Qg-3Sc" id="oIr-Ld-Ttn"/>
+                        <outlet property="hintTwoD" destination="Kiu-ne-rPu" id="yKh-Zz-a0q"/>
+                        <outlet property="hintTwoE" destination="FyB-1e-72q" id="cRc-Nb-TP5"/>
+                        <outlet property="hintTwoF" destination="Mcs-mZ-fgD" id="c29-pf-9dq"/>
+                        <outlet property="holeFourA" destination="Dy9-Uq-Bss" id="RNx-pQ-wwx"/>
+                        <outlet property="holeFourB" destination="N3f-ll-HbM" id="GwA-M9-7v0"/>
+                        <outlet property="holeFourC" destination="BUl-ui-sfq" id="xee-7Q-Bjc"/>
+                        <outlet property="holeFourD" destination="6a4-ai-s5D" id="vpb-gL-9e3"/>
+                        <outlet property="holeFourE" destination="i52-dG-TRQ" id="fho-AO-PDi"/>
+                        <outlet property="holeFourF" destination="6zL-Wh-vKj" id="0tW-aj-Vnu"/>
+                        <outlet property="holeOneA" destination="vBn-bw-mKA" id="lQV-Ur-HuK"/>
+                        <outlet property="holeOneB" destination="P0c-HX-ybe" id="nwx-BF-yq4"/>
+                        <outlet property="holeOneC" destination="EhV-87-RPD" id="7iB-zB-9Ma"/>
+                        <outlet property="holeOneD" destination="ZYt-4S-zpC" id="iLy-66-7sv"/>
+                        <outlet property="holeOneE" destination="Z8d-Z6-u5o" id="yOD-VL-5XW"/>
+                        <outlet property="holeOneF" destination="AAQ-yl-8gk" id="G5z-Sy-EiO"/>
+                        <outlet property="holeThreeA" destination="HbI-ve-BIO" id="Ahd-Na-IEA"/>
+                        <outlet property="holeThreeB" destination="3D1-hT-uMA" id="GkO-km-40z"/>
+                        <outlet property="holeThreeC" destination="17y-EO-qT6" id="vyj-6Z-8FH"/>
+                        <outlet property="holeThreeD" destination="dZm-ql-wtX" id="GHo-zJ-TQl"/>
+                        <outlet property="holeThreeE" destination="10R-E7-783" id="hGK-x3-yCW"/>
+                        <outlet property="holeThreeF" destination="4zO-RA-DNT" id="6bF-qR-p6o"/>
+                        <outlet property="holeTwoA" destination="dWd-Gq-xT9" id="AXl-lh-yYe"/>
+                        <outlet property="holeTwoB" destination="cai-gS-lTW" id="V3D-v5-16X"/>
+                        <outlet property="holeTwoC" destination="13a-iC-Btd" id="kq8-Tc-Dkc"/>
+                        <outlet property="holeTwoD" destination="rPq-Um-6es" id="GEQ-o7-6Ra"/>
+                        <outlet property="holeTwoE" destination="MPF-wf-Qfa" id="b3X-1B-GTO"/>
+                        <outlet property="holeTwoF" destination="hXT-FT-rTe" id="lXa-93-OYx"/>
                         <outlet property="homeFrame" destination="5Km-uc-lFW" id="Jbx-7I-96A"/>
                         <outlet property="homeLabel" destination="ElC-z9-WgJ" id="nwg-fU-RwF"/>
                         <outlet property="labelAllowDuplicates" destination="qmW-fj-4PH" id="ORl-9Y-CLX"/>
                         <outlet property="labelCredits" destination="a3t-e1-qkN" id="sBr-eD-tDL"/>
                         <outlet property="labelRandomizeHints" destination="2kO-bh-Up9" id="uoi-NU-7Z2"/>
+                        <outlet property="playFrame" destination="URN-C3-ZcZ" id="Un7-fo-yLs"/>
                         <outlet property="tutorialFrame" destination="gWf-kb-2th" id="HbC-nn-FhM"/>
                         <outlet property="tutorialLabel" destination="FI1-CY-Kil" id="laK-bL-vUh"/>
                     </connections>
@@ -322,6 +730,7 @@
     <resources>
         <image name="centerFieldView.png" width="294" height="301"/>
         <image name="hexBG-568h@2x.png.png" width="339" height="937"/>
+        <image name="hintEmpty.png" width="19" height="19"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

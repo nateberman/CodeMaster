@@ -70,7 +70,7 @@
     //this stores the identity of the active centerPanel for programmatic access
     IBOutlet UIView *centerPanelActive;
     
-    //UIImageViews that supply hits to the user after each code submission
+    //UIImageViews that supply hints to the user after each code submission
     IBOutlet UIImageView *hintOneA;
     IBOutlet UIImageView *hintTwoA;
     IBOutlet UIImageView *hintThreeA;
