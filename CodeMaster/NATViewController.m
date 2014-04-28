@@ -76,8 +76,10 @@ int attemptCount = 1;
     // gameOver goes over everything
     [self.view insertSubview:gameOverView aboveSubview:topDoorView];
     
-    // place our gameOverView
+    // set up our gameOverView
     gameOverView.frame = CGRectMake(80, -90, 160, 90);
+    [_buttonPlayAgain setTitle:@"Play Again" forState:UIControlStateNormal];
+    [_buttonMenu setTitle:@"Menu" forState:UIControlStateNormal];
     // hide it
     gameOverView.hidden = YES;
     
@@ -114,7 +116,7 @@ int attemptCount = 1;
     centerPanelDifficulty.hidden = YES;
     
     // hide debug view
-    devTestView.hidden = YES;
+    devTestView.hidden = NO;
     
     // configure Difficulty contents
     // allowDuplicates button
@@ -163,6 +165,10 @@ int attemptCount = 1;
     [_holeTwoF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
     [_holeThreeF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
     [_holeFourF setImage:[UIImage imageNamed:@"hole.png"] forState:UIControlStateNormal];
+    
+    // set submit and back buttons in play view
+    [_buttonSubmit setTitle:@"Submit" forState:UIControlStateNormal];
+    [buttonBack setTitle:@"Back" forState:UIControlStateNormal];
 }
 
 // opening animation
@@ -249,7 +255,7 @@ int attemptCount = 1;
             [_attemptBView setUserInteractionEnabled:YES];
             
             // randomize hints based on difficulty
-            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+            if ([defaults integerForKey:@"randomHintToggle"] == 1){
                 // handle random hints
             }
             else {
@@ -288,7 +294,7 @@ int attemptCount = 1;
             attemptCount = attemptCount+1;
             //enable attemptCView
             [_attemptCView setUserInteractionEnabled:YES];
-            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+            if ([defaults integerForKey:@"randomHintToggle"] == 1){
                 //handle "random" visual queues
             }
             else {
@@ -332,7 +338,7 @@ int attemptCount = 1;
             //enable attemptDView
             [_attemptDView setUserInteractionEnabled:YES];
             
-            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+            if ([defaults integerForKey:@"randomHintToggle"] == 1){
                 //handle "random" visual queues
             }
             else {
@@ -375,7 +381,7 @@ int attemptCount = 1;
             //enable attemptEView
             [_attemptEView setUserInteractionEnabled:YES];
             
-            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+            if ([defaults integerForKey:@"randomHintToggle"] == 1){
                 //handle 'random' visual queues
             }
             else {
@@ -419,7 +425,7 @@ int attemptCount = 1;
             //enable our attemptFView
             [_attemptFView setUserInteractionEnabled:YES];
             
-            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+            if ([defaults integerForKey:@"randomHintToggle"] == 1){
                 //handle 'random' visual queues
             }
             else {
@@ -494,7 +500,7 @@ int attemptCount = 1;
 // compare submitted code with secret code
 // if there is a perfect match for a hole make the hint#'s image hintPerfect
 // if the color is in the code but in the wrong position make the hint#'s image hintColor
-// if the hole does not match set the hnt#'s image to nil
+// if the hole does not match set the hint#'s image to nil
 - (void)compareCodeAnswerOne:(UIImageView *)one answerTwo:(UIImageView *)two answerThree:(UIImageView *)three answerFour:(UIImageView *)four {
     
     // set up containers
@@ -523,7 +529,7 @@ int attemptCount = 1;
     UIImageView *hintColor = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"HintColor.png"]];
     
     // if randomHintToggle is on then randomize the display of hints
-    if([defaults integerForKey:@"randomHintsToggle"] == 1){
+    if([defaults integerForKey:@"randomHintToggle"] == 1){
         // check for perfect matches. one hint given per submitted codeAnswer
         if (one.image == codeOne.image){
             [hintImages addObject:hintPerfect.image];
@@ -650,7 +656,7 @@ int attemptCount = 1;
             }
         }
         
-        // since randomHintsToggle on
+        // since randomHintToggle on
         // sort hints so hintPerfects are returned first
         for (int i = 0; i < hintImages.count; i++){
             if ([hintImages objectAtIndex:i] == hintPerfect.image) {
@@ -693,7 +699,7 @@ int attemptCount = 1;
     [hintImages removeAllObjects];
     [randomHintImages removeAllObjects];
     
-    // randomHintsToggle off, do not randomize hints
+    // randomHintToggle off, do not randomize hints
     if ([defaults integerForKey:@"randomHintToggle"] == 0 || nil) {
         // compare code values for perfect matches
         if (one.image == codeOne.image){
@@ -1306,14 +1312,77 @@ int attemptCount = 1;
     [self openDoors];
 }
 
-// audio effect
+// audio effect for rotation of center panel
 - (void)swoosh {
-    
+    NSString *audioPath;
+    audioPath = [[NSBundle mainBundle]pathForResource:[NSString stringWithFormat:@"flip"] ofType:@"mp3"];
+    NSURL *url;
+    url = [NSURL fileURLWithPath:audioPath];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:NULL];
+    _audioPlayer.volume = 0.5;
+    [_audioPlayer play];
 }
 
 // add some pizazz to the background
 - (void)randomLight {
+    // spot light image
+    UIImage *randomLight = [UIImage imageNamed:@"randomLight.png"];
+    UIImageView *randomLightView = [[UIImageView alloc]initWithImage:randomLight];
     
+    // place the image in the main view heirarchy
+    [self.view insertSubview:randomLightView aboveSubview:backgroundBlack];
+    
+    // animate spot light
+    // we're going to need to set a range of acceptable time for the animation to take, because if it chooses a time that is very short it does not look as good
+    int randomSpeed = [self randomSpeed];
+    
+    // randomize the light's starting point
+    randomLightView.frame = CGRectMake(arc4random()%400, arc4random()%600, randomLight.size.width, randomLight.size.height);
+    // initialize light with its alpha at 0
+    randomLightView.alpha = 0;
+    
+    // over an amount of time determined by our randomValue calculation above the light will light up and move to a randomly chosen point
+    [UIImageView animateWithDuration:randomSpeed
+                               delay:0.0
+                             options:UIViewAnimationOptionCurveEaseOut
+                          animations:^{
+                              randomLightView.frame = CGRectMake([self randomX], [self randomY], randomLight.size.width, randomLight.size.height);
+                              randomLightView.alpha = 1;
+                          }
+     // then move it to a new point at an angle to keep it feeling lively as we fade out
+                          completion:^(BOOL finished){
+                              [UIImageView animateWithDuration:randomSpeed
+                                                         delay:0.0
+                                                       options:UIViewAnimationOptionCurveEaseOut
+                                                    animations:^{
+                                                        randomLightView.frame = CGRectMake([self randomX], [self randomY], randomLight.size.width, randomLight.size.height);
+                                                        randomLightView.alpha = 0;
+                                                    }completion:^(BOOL finished){}];
+                              [self randomLight];
+                          }];
+    // reclaim that memory
+    randomLightView = nil;
+}
+// random number generator between a lowerBound and upperBound, used for the speed of our randomLight
+- (int)randomSpeed{
+    int lowerBound = 1;
+    int upperBound = 3;
+    int randomValue = lowerBound + arc4random() % (upperBound - lowerBound);
+    return randomValue;
+}
+// random number generator between a lowerBound and upperBound, used for creating a random x coordinate
+- (int)randomX{
+    int lowerBound = -10;
+    int upperBound = 330;
+    int randomValue = lowerBound + arc4random() % (upperBound - lowerBound);
+    return randomValue;
+}
+//a random number generator between a lowerBound and upperBound, used for creating a random y coordinate
+- (int)randomY{
+    int lowerBound = -10;
+    int upperBound = 590;
+    int randomValue = lowerBound + arc4random() % (upperBound - lowerBound);
+    return randomValue;
 }
 
 #pragma mark CHOICE BUTTONS
