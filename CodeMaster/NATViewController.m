@@ -12,6 +12,9 @@
 
 @interface NATViewController ()
 
+// setup for our audioPlayer
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+
 @end
 
 @implementation NATViewController
@@ -206,6 +209,35 @@ int attemptCount = 1;
     [self swoosh];
 }
 
+// view difficulty panel
+- (IBAction)buttonDifficulty:(id)sender {
+    
+    [UIView transitionWithView:centerPanelView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromTop
+                    animations:^{
+                        centerPanelHome.hidden = YES;
+                        centerPanelDifficulty.hidden = NO;
+                        centerPanelActive = centerPanelDifficulty;
+                    } completion:^(BOOL finished) {
+                        // audio anouncement
+                        // NSString to be turned into NSURL containing audio file path
+                        NSString *audioPath;
+                        // select sound
+                        audioPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"difficulty"] ofType:@"mp3"];
+                        // create NSURL and pass file with audio path
+                        NSURL *url;
+                        url = [NSURL fileURLWithPath:audioPath];
+                        // accessing a variable from outside the method _audioPlayer
+                        // allocate and initiate our audioPlayer with contents of NSURL we created
+                        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:NULL];
+                        // play sound
+                        [_audioPlayer play];
+                    }];
+    
+    [self swoosh];
+}
+
 // set points of user interaction
 // reset image states
 // create new secret code
@@ -373,6 +405,54 @@ int attemptCount = 1;
                           }];
 }
 
+// animate top and bot panels away for menu access
+- (void)hideTopAndBot {
+    //before we retract the top and bot we want to give them a little bump to feel more fun, bringing them in 7px
+    [UIImageView animateWithDuration:0.2
+                               delay:0.0
+                             options:UIViewAnimationOptionCurveEaseIn //choose ease in to simulate hang time
+                          animations:^{
+                              
+                              topPanelView.frame = CGRectMake(13, topPanelView.frame.origin.y + 7, 294, 91);
+                              botPanelView.frame = CGRectMake(13, botPanelView.frame.origin.y - 7, 294, 91);
+                              
+                          }
+     // retract panels
+                          completion:^(BOOL finished) {
+                              [UIImageView animateWithDuration:0.3
+                                                         delay:0.1 // add hang time
+                                                       options:UIViewAnimationOptionCurveEaseIn
+                                                    animations:^{
+                                                        // 4inch
+                                                        if([[UIScreen mainScreen]bounds].size.height == 568){
+                                                            topPanelView.frame = CGRectMake(13, -91, 294, 91);
+                                                            botPanelView.frame = CGRectMake(13, 568, 294, 91);
+                                                        }
+                                                        // 3.5inch
+                                                        else{
+                                                            topPanelView.frame = CGRectMake(13, -91, 294, 91);
+                                                            botPanelView.frame = CGRectMake(13, 480, 294, 91);
+                                                        }
+                                                    }completion:^(BOOL finished) {}];
+                          }];
+}
+
+// game menu access
+- (IBAction)buttonMenu:(id)sender {
+    // hide our top and bot panels
+    [self hideTopAndBot];
+    // show centerPanelHome
+    centerPanelHome.hidden = NO;
+    // hide centerPanelPlay
+    centerPanelPlay.hidden = YES;
+}
+
+// play again
+- (IBAction)buttonPlayAgain:(id)sender {
+    [self newGame];
+    [self openDoors];
+}
+
 // audio effect
 - (void)swoosh {
     
@@ -382,4 +462,415 @@ int attemptCount = 1;
 - (void)randomLight {
     
 }
+
+#pragma mark HOLE BUTTONS
+- (IBAction)holeOneA:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeOneA.selected = NO;
+        [_holeOneA setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeOneA setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeOneA.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneA.selected) || (!_holeTwoA.selected) || (!_holeThreeA.selected) || (!_holeFourA.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeTwoA:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeTwoA.selected = NO;
+        [_holeTwoA setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeTwoA setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeTwoA.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneA.selected) || (!_holeTwoA.selected) || (!_holeThreeA.selected) || (!_holeFourA.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeThreeA:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeThreeA.selected = NO;
+        [_holeThreeA setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeThreeA setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeThreeA.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneA.selected) || (!_holeTwoA.selected) || (!_holeThreeA.selected) || (!_holeFourA.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeFourA:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeFourA.selected = NO;
+        [_holeFourA setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeFourA setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeFourA.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneA.selected) || (!_holeTwoA.selected) || (!_holeThreeA.selected) || (!_holeFourA.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeOneB:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeOneB.selected = NO;
+        [_holeOneB setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeOneB setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeOneB.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneB.selected) || (!_holeTwoB.selected) || (!_holeThreeB.selected) || (!_holeFourB.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeTwoB:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeTwoB.selected = NO;
+        [_holeTwoB setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeTwoB setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeTwoB.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneB.selected) || (!_holeTwoB.selected) || (!_holeThreeB.selected) || (!_holeFourB.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeThreeB:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeThreeB.selected = NO;
+        [_holeThreeB setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeThreeB setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeThreeB.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneB.selected) || (!_holeTwoB.selected) || (!_holeThreeB.selected) || (!_holeFourB.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeFourB:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeFourB.selected = NO;
+        [_holeFourB setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeFourB setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeFourB.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneB.selected) || (!_holeTwoB.selected) || (!_holeThreeB.selected) || (!_holeFourB.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeOneC:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeOneC.selected = NO;
+        [_holeOneC setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeOneC setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeOneC.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneC.selected) || (!_holeTwoC.selected) || (!_holeThreeC.selected) || (!_holeFourC.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeTwoC:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeTwoC.selected = NO;
+        [_holeTwoC setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeTwoC setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeTwoC.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneC.selected) || (!_holeTwoC.selected) || (!_holeThreeC.selected) || (!_holeFourC.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeThreeC:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeThreeC.selected = NO;
+        [_holeThreeC setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeThreeC setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeThreeC.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneC.selected) || (!_holeTwoC.selected) || (!_holeThreeC.selected) || (!_holeFourC.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeFourC:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeFourC.selected = NO;
+        [_holeFourC setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeFourC setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeFourC.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneC.selected) || (!_holeTwoC.selected) || (!_holeThreeC.selected) || (!_holeFourC.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeOneD:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeOneD.selected = NO;
+        [_holeOneD setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeOneD setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeOneD.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneD.selected) || (!_holeTwoD.selected) || (!_holeThreeD.selected) || (!_holeFourD.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeTwoD:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeTwoD.selected = NO;
+        [_holeTwoD setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeTwoD setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeTwoD.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneD.selected) || (!_holeTwoD.selected) || (!_holeThreeD.selected) || (!_holeFourD.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeThreeD:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeThreeD.selected = NO;
+        [_holeThreeD setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeThreeD setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeThreeD.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneD.selected) || (!_holeTwoD.selected) || (!_holeThreeD.selected) || (!_holeFourD.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeFourD:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeFourD.selected = NO;
+        [_holeFourD setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeFourD setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeFourD.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneD.selected) || (!_holeTwoD.selected) || (!_holeThreeD.selected) || (!_holeFourD.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeOneE:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeOneE.selected = NO;
+        [_holeOneE setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeOneE setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeOneE.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneE.selected) || (!_holeTwoE.selected) || (!_holeThreeE.selected) || (!_holeFourE.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeTwoE:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeTwoE.selected = NO;
+        [_holeTwoE setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeTwoE setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeTwoE.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneE.selected) || (!_holeTwoE.selected) || (!_holeThreeE.selected) || (!_holeFourE.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeThreeE:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeThreeE.selected = NO;
+        [_holeThreeE setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeThreeE setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeThreeE.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneE.selected) || (!_holeTwoE.selected) || (!_holeThreeE.selected) || (!_holeFourE.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeFourE:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeFourE.selected = NO;
+        [_holeFourE setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeFourE setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeFourE.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneE.selected) || (!_holeTwoE.selected) || (!_holeThreeE.selected) || (!_holeFourE.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeOneF:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeOneF.selected = NO;
+        [_holeOneF setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeOneF setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeOneF.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneF.selected) || (!_holeTwoF.selected) || (!_holeThreeF.selected) || (!_holeFourF.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeTwoF:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeTwoF.selected = NO;
+        [_holeTwoF setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeTwoF setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeTwoF.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneF.selected) || (!_holeTwoF.selected) || (!_holeThreeF.selected) || (!_holeFourF.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeThreeF:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeThreeF.selected = NO;
+        [_holeThreeF setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeThreeF setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeThreeF.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneF.selected) || (!_holeTwoF.selected) || (!_holeThreeF.selected) || (!_holeFourF.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+- (IBAction)holeFourF:(id)sender {
+    //first check to see if our selectedImage is nil, if it is pressing the button should have no apparent effect and we should ensure the selected state image is nil
+    if (selectedImage.image == nil){
+        _holeFourF.selected = NO;
+        [_holeFourF setImage:nil forState:UIControlStateSelected];
+    }
+    //if there is an image in selectedImage we set our button's selected state to have that image and change our button state to selected so it displays
+    else {
+        [_holeFourF setImage:selectedImage.image forState:UIControlStateSelected];
+        _holeFourF.selected = YES;
+    }
+    
+    //check to ensure all of our holes are filled in the row to enable / disable our submit button appropriately
+    if ((!_holeOneF.selected) || (!_holeTwoF.selected) || (!_holeThreeF.selected) || (!_holeFourF.selected)){
+        [_buttonSubmit setUserInteractionEnabled:NO];
+    } else { [_buttonSubmit setUserInteractionEnabled:YES]; }
+}
+
 @end

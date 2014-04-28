@@ -10,20 +10,20 @@
 
 @interface NATViewController : UIViewController <UIGestureRecognizerDelegate>{
     
-    //declare our interface assets
+    // background assets
     IBOutlet UIImageView *backgroundBlack;
     IBOutlet UIImageView *backgroundHex;
     
-    //top and bot doors
+    // top and bot doors
     IBOutlet UIView *topDoorView;
     IBOutlet UIImageView *topDoor;
     IBOutlet UIView *botDoorView;
     IBOutlet UIImageView *botDoor;
     
-    //gameOver
+    // gameOver
     IBOutlet UIView *gameOverView;
     
-    //top and bot panels
+    // top and bot panels
     IBOutlet UIView *topPanelView;
     IBOutlet UIImageView *topPanel; //frame image
     IBOutlet UIImageView *codeCover;
@@ -34,9 +34,9 @@
     IBOutlet UIView *botPanelView; //default 6 button
     IBOutlet UIImageView *botPanel; //frame image
     
-    //primary centerPanel container view
+    // primary centerPanel container view
     IBOutlet UIView *centerPanelView;
-    //home centerPanel view
+    // home centerPanel view
     IBOutlet UIView *centerPanelHome;
     IBOutlet UIImageView *homeFrame;
     IBOutlet UILabel *homeLabel;
@@ -67,7 +67,7 @@
     //programmatic back button
     IBOutlet UIButton *buttonBack;
     
-    //this stores the identity of the active centerPanel for programmatic access
+    //this stores the identity of the active centerPanel for programmatic access 
     IBOutlet UIView *centerPanelActive;
     
     //UIImageViews that supply hints to the user after each code submission

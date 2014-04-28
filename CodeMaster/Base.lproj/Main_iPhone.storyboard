@@ -213,7 +213,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4j5-CE-qBQ" userLabel="Button - Submit">
                                                 <rect key="frame" x="111" y="285" width="75" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Submit">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -234,7 +234,7 @@
                                                             <action selector="holeOneA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0ZC-M6-rfl"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dWd-Gq-xT9" userLabel="Button - holeTwoA">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dWd-Gq-xT9" userLabel="Button - holeTwoA">
                                                         <rect key="frame" x="53" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -244,7 +244,7 @@
                                                             <action selector="holeTwoA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0aO-NC-nxD"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HbI-ve-BIO" userLabel="Button - holeThreeA">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HbI-ve-BIO" userLabel="Button - holeThreeA">
                                                         <rect key="frame" x="102" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -254,7 +254,7 @@
                                                             <action selector="holeThreeA:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RVp-bW-TYI"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dy9-Uq-Bss" userLabel="Button - holeFourA">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dy9-Uq-Bss" userLabel="Button - holeFourA">
                                                         <rect key="frame" x="151" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -297,7 +297,7 @@
                                                             <action selector="holeOneB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dpV-kS-Ufk"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cai-gS-lTW" userLabel="Button - holeTwoB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cai-gS-lTW" userLabel="Button - holeTwoB">
                                                         <rect key="frame" x="53" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -307,7 +307,7 @@
                                                             <action selector="holeTwoB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="J18-60-vh8"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3D1-hT-uMA" userLabel="Button - holeThreeB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3D1-hT-uMA" userLabel="Button - holeThreeB">
                                                         <rect key="frame" x="102" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -317,7 +317,7 @@
                                                             <action selector="holeThreeB:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="twJ-43-FVY"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="N3f-ll-HbM" userLabel="Button - holeFourB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="N3f-ll-HbM" userLabel="Button - holeFourB">
                                                         <rect key="frame" x="151" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -360,7 +360,7 @@
                                                             <action selector="holeOneC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9oF-uS-UsA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13a-iC-Btd" userLabel="Button - holeTwoC">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="13a-iC-Btd" userLabel="Button - holeTwoC">
                                                         <rect key="frame" x="53" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -370,7 +370,7 @@
                                                             <action selector="holeTwoC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h3l-87-4ZA"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17y-EO-qT6" userLabel="Button - holeThreeC">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="17y-EO-qT6" userLabel="Button - holeThreeC">
                                                         <rect key="frame" x="102" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -380,7 +380,7 @@
                                                             <action selector="holeThreeC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YvM-rS-5fp"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BUl-ui-sfq" userLabel="Button - holeFourC">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BUl-ui-sfq" userLabel="Button - holeFourC">
                                                         <rect key="frame" x="151" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -423,7 +423,7 @@
                                                             <action selector="holeOneD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bhp-AK-NMh"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rPq-Um-6es" userLabel="Button - holeTwoD">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rPq-Um-6es" userLabel="Button - holeTwoD">
                                                         <rect key="frame" x="53" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -433,7 +433,7 @@
                                                             <action selector="holeTwoD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7WR-2S-Uic"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dZm-ql-wtX" userLabel="Button - holeThreeD">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dZm-ql-wtX" userLabel="Button - holeThreeD">
                                                         <rect key="frame" x="102" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -443,7 +443,7 @@
                                                             <action selector="holeThreeD:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iAW-sv-M0H"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6a4-ai-s5D" userLabel="Button - holeFourD">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6a4-ai-s5D" userLabel="Button - holeFourD">
                                                         <rect key="frame" x="151" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -486,7 +486,7 @@
                                                             <action selector="holeOneE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h0y-n5-Ewt"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MPF-wf-Qfa" userLabel="Button - holeTwoE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MPF-wf-Qfa" userLabel="Button - holeTwoE">
                                                         <rect key="frame" x="53" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -496,7 +496,7 @@
                                                             <action selector="holeTwoE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yrq-jT-b0E"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="10R-E7-783" userLabel="Button - holeThreeE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="10R-E7-783" userLabel="Button - holeThreeE">
                                                         <rect key="frame" x="102" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -506,7 +506,7 @@
                                                             <action selector="holeThreeE:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1us-su-De3"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i52-dG-TRQ" userLabel="Button - holeFourE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i52-dG-TRQ" userLabel="Button - holeFourE">
                                                         <rect key="frame" x="151" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -549,7 +549,7 @@
                                                             <action selector="holeOneF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FqH-8U-h10"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hXT-FT-rTe" userLabel="Button - holeTwoF">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hXT-FT-rTe" userLabel="Button - holeTwoF">
                                                         <rect key="frame" x="53" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -559,7 +559,7 @@
                                                             <action selector="holeTwoF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lRt-WA-WFu"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4zO-RA-DNT" userLabel="Button - holeThreeF">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4zO-RA-DNT" userLabel="Button - holeThreeF">
                                                         <rect key="frame" x="102" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -569,7 +569,7 @@
                                                             <action selector="holeThreeF:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5L5-7Y-hwy"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6zL-Wh-vKj" userLabel="Button - holeFourF">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6zL-Wh-vKj" userLabel="Button - holeFourF">
                                                         <rect key="frame" x="151" y="1" width="45" height="45"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button">
@@ -601,9 +601,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h0c-dK-P6y" userLabel="Button - Back">
                                                 <rect key="frame" x="-17" y="-18" width="73" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Back">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttonBack:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2SP-Um-uv4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -769,7 +772,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NkF-gG-zCz" userLabel="Button - Play Again">
                                         <rect key="frame" x="43" y="0.0" width="73" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Play Again">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -779,7 +782,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PIz-Y0-uev" userLabel="Button - Menu">
                                         <rect key="frame" x="43" y="45" width="73" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Menu">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
