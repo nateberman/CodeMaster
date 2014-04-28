@@ -237,6 +237,33 @@ int attemptCount = 1;
     
     [self swoosh];
 }
+// increase difficuly by allowing duplicate colors in code
+- (IBAction)buttonAllowDuplicates:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // if the toggle is off, indicated by 0 or nil, toggle switch and set defaults key
+    if([defaults integerForKey:@"duplicateColorToggle"] == 0 || nil){
+        buttonAllowDuplicates.selected = YES;
+        [defaults setInteger:1 forKey:@"duplicateColorToggle"];
+    }
+    else {
+        [defaults setInteger:0 forKey:@"duplicateColorToggle"];
+        buttonAllowDuplicates.selected = NO;
+    }
+}
+// increase difficulty by randomizing hint order
+- (IBAction)buttonRandomizeHints:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // if the toggle is off, indicated by 0 or nil, toggle switch and set defaults key
+    if([defaults integerForKey:@"randomHintToggle"] == 0 || nil){
+        buttonRandomizeHints.selected = YES;
+        [defaults setInteger:1 forKey:@"randomHintToggle"];
+    }
+    else {
+        [defaults setInteger:0 forKey:@"randomHintToggle"];
+        buttonRandomizeHints.selected = NO;
+    }
+}
 
 // view tutorial panel
 - (IBAction)buttonTutorial:(id)sender {
