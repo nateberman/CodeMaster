@@ -114,7 +114,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonMenu;
 
 //actions for each of our centerPanel view buttons
-- (IBAction)buttonFlip:(id)sender;
 - (IBAction)buttonPlay:(id)sender;
 - (IBAction)buttonDifficulty:(id)sender;
 - (IBAction)buttonTutorial:(id)sender;

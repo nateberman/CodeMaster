@@ -208,9 +208,757 @@ int attemptCount = 1;
     
     [self swoosh];
 }
+// submit a code
+- (IBAction)buttonSubmit:(id)sender {
+    
+    // disable submit button
+    [_buttonSubmit setUserInteractionEnabled:NO];
+    
+    // prepare to access NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    // deselect all choices
+    [self deselectChoices];
+    selectedImage.image = nil;
+    
+    // compare submitted code to secret code
+    // the comparison will set the hint1-4 images
+    
+    ///////////////////////////////////////////// ATTEMPT 1 ///////////////////////////////////////////////////
+    if (attemptCount == 1){
+       //
+        UIImageView *holeOne = [[UIImageView alloc]initWithImage:[_holeOneA imageForState:UIControlStateSelected]];
+        UIImageView *holeTwo = [[UIImageView alloc]initWithImage:[_holeTwoA imageForState:UIControlStateSelected]];
+        UIImageView *holeThree = [[UIImageView alloc]initWithImage:[_holeThreeA imageForState:UIControlStateSelected]];
+        UIImageView *holeFour = [[UIImageView alloc]initWithImage:[_holeFourA imageForState:UIControlStateSelected]];
+        
+        // send our hole UIImageViews to be compared to code
+        [self compareCodeAnswerOne:holeOne answerTwo:holeTwo answerThree:holeThree answerFour:holeFour];
+        
+        // set hint images based on returned hint1-4
+        [hintOneA setImage: hint1.image];
+        [hintTwoA setImage: hint2.image];
+        [hintThreeA setImage: hint3.image];
+        [hintFourA setImage: hint4.image];
+        
+        //check for a win. if no win increment attempt count
+        // disable current attempt view interaction. enable next attempt view interaction
+        if(![self didWin]) {
+            [_attemptAView setUserInteractionEnabled:NO];
+            attemptCount += 1;
+            [_attemptBView setUserInteractionEnabled:YES];
+            
+            // randomize hints based on difficulty
+            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+                // handle random hints
+            }
+            else {
+                // not random hints
+            }
+        }
+        // win scenario
+        else {
+            // closing doors is handled by didWin method
+            // show hidden code
+            codeCover.alpha = 0;
+        }
+    }
+    ///////////////////////////////////////////// ATTEMPT 2 ///////////////////////////////////////////////////
+    else if (attemptCount == 2){
+        //create our hole UIImageViews that hold our selection to pass to the compareCodeAnswer method
+        UIImageView *holeOne = [[UIImageView alloc]initWithImage:[_holeOneB imageForState:UIControlStateSelected]];
+        UIImageView *holeTwo = [[UIImageView alloc]initWithImage:[_holeTwoB imageForState:UIControlStateSelected]];
+        UIImageView *holeThree = [[UIImageView alloc]initWithImage:[_holeThreeB imageForState:UIControlStateSelected]];
+        UIImageView *holeFour = [[UIImageView alloc]initWithImage:[_holeFourB imageForState:UIControlStateSelected]];
+        
+        //send our hole UIImageViews to be compared to the code
+        [self compareCodeAnswerOne:holeOne answerTwo:holeTwo answerThree:holeThree answerFour:holeFour];
+        
+        //and now we set our row hint images to the returned hint1-4 images
+        [hintOneB setImage: hint1.image];
+        [hintTwoB setImage: hint2.image];
+        [hintThreeB setImage: hint3.image];
+        [hintFourB setImage: hint4.image];
+        
+        //check for a win. if the player did not win we increment the attemptCount, disable all the row2 buttons, enable all the row3 buttons, and set all the row2 hole smileys to sad faces
+        if (![self didWin]){
+            //disable attemptBView
+            [_attemptBView setUserInteractionEnabled:NO];
+            //increase attemptCount
+            attemptCount = attemptCount+1;
+            //enable attemptCView
+            [_attemptCView setUserInteractionEnabled:YES];
+            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+                //handle "random" visual queues
+            }
+            else {
+                //handle not "random" visual queues
+            }
+        }
+        
+        //WIN SCENARIO
+        else {
+            //the win scenario closeDoors is handled by the didWin method
+            
+            //show our player the hidden code
+            codeCover.alpha = 0;
+        }
+        
+    }
+    
+    ///////////////////////////////////////////// ATTEMPT 3 ///////////////////////////////////////////////////
+    else if (attemptCount == 3){
+        //create our hole UIImageViews that hold our selection to pass to the compareCodeAnswer method
+        UIImageView *holeOne = [[UIImageView alloc]initWithImage:[_holeOneC imageForState:UIControlStateSelected]];
+        UIImageView *holeTwo = [[UIImageView alloc]initWithImage:[_holeTwoC imageForState:UIControlStateSelected]];
+        UIImageView *holeThree = [[UIImageView alloc]initWithImage:[_holeThreeC imageForState:UIControlStateSelected]];
+        UIImageView *holeFour = [[UIImageView alloc]initWithImage:[_holeFourC imageForState:UIControlStateSelected]];
+        
+        //send our hole UIImageViews to be compared to the code
+        [self compareCodeAnswerOne:holeOne answerTwo:holeTwo answerThree:holeThree answerFour:holeFour];
+        
+        //and now we set our row hint images to the returned hint1-4 images
+        [hintOneC setImage: hint1.image];
+        [hintTwoC setImage: hint2.image];
+        [hintThreeC setImage: hint3.image];
+        [hintFourC setImage: hint4.image];
+        
+        //check for a win. if the player did not win we increment the attemptCount, disable all the row3 buttons, enable all the row4 buttons, and set all the row3 hole smileys to sad faces
+        if (![self didWin]){
+            //disable attemptCView
+            [_attemptCView setUserInteractionEnabled:NO];
+            //increase our attemptCount
+            attemptCount = attemptCount+1;
+            //enable attemptDView
+            [_attemptDView setUserInteractionEnabled:YES];
+            
+            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+                //handle "random" visual queues
+            }
+            else {
+                //handle not 'random' visual queues
+            }
+        }
+        
+        //WIN SCENARIO
+        else {
+            //the win scenario closeDoors is handled by the didWin method
+            
+            //show our player the hidden code
+            codeCover.alpha = 0;
+        }
+    }
+    
+    ///////////////////////////////////////////// ATTEMPT 4 ///////////////////////////////////////////////////
+    else if (attemptCount == 4){
+        //create our hole UIImageViews that hold our selection to pass to the compareCodeAnswer method
+        UIImageView *holeOne = [[UIImageView alloc]initWithImage:[_holeOneD imageForState:UIControlStateSelected]];
+        UIImageView *holeTwo = [[UIImageView alloc]initWithImage:[_holeTwoD imageForState:UIControlStateSelected]];
+        UIImageView *holeThree = [[UIImageView alloc]initWithImage:[_holeThreeD imageForState:UIControlStateSelected]];
+        UIImageView *holeFour = [[UIImageView alloc]initWithImage:[_holeFourD imageForState:UIControlStateSelected]];
+        
+        //send our hole UIImageViews to be compared to the code
+        [self compareCodeAnswerOne:holeOne answerTwo:holeTwo answerThree:holeThree answerFour:holeFour];
+        
+        //and now we set our row hint images to the returned hint1-4 images
+        [hintOneD setImage: hint1.image];
+        [hintTwoD setImage: hint2.image];
+        [hintThreeD setImage: hint3.image];
+        [hintFourD setImage: hint4.image];
+        
+        //check for a win. if the player did not win we increment the attemptCount, disable all the row4 buttons, enable all the row5 buttons, and set all the row4 hole smileys to sad faces
+        if (![self didWin]){
+            //disable attemptDView
+            [_attemptDView setUserInteractionEnabled:NO];
+            //increment our attemptCount
+            attemptCount = attemptCount+1;
+            //enable attemptEView
+            [_attemptEView setUserInteractionEnabled:YES];
+            
+            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+                //handle 'random' visual queues
+            }
+            else {
+                //handle not 'random' visual queues
+            }
+        }
+        
+        //WIN SCENARIO
+        else {
+            //the win scenario closeDoors is handled by the didWin method
+            
+            //show our player the hidden code
+            codeCover.alpha = 0;
+        }
+        
+    }
+    
+    ///////////////////////////////////////////// ATTEMPT 5 ///////////////////////////////////////////////////
+    else if (attemptCount == 5){
+        //create our hole UIImageViews that hold our selection to pass to the compareCodeAnswer method
+        UIImageView *holeOne = [[UIImageView alloc]initWithImage:[_holeOneE imageForState:UIControlStateSelected]];
+        UIImageView *holeTwo = [[UIImageView alloc]initWithImage:[_holeTwoE imageForState:UIControlStateSelected]];
+        UIImageView *holeThree = [[UIImageView alloc]initWithImage:[_holeThreeE imageForState:UIControlStateSelected]];
+        UIImageView *holeFour = [[UIImageView alloc]initWithImage:[_holeFourE imageForState:UIControlStateSelected]];
+        
+        //send our hole UIImageViews to be compared to the code
+        [self compareCodeAnswerOne:holeOne answerTwo:holeTwo answerThree:holeThree answerFour:holeFour];
+        
+        //and now we set our row hint images to the returned hint1-4 images
+        [hintOneE setImage: hint1.image];
+        [hintTwoE setImage: hint2.image];
+        [hintThreeE setImage: hint3.image];
+        [hintFourE setImage: hint4.image];
+        
+        //check for a win. if the player did not win we increment the attemptCount, disable all the row5 buttons, enable all the row6 buttons, and set all the row5 hole smileys to sad faces
+        if (![self didWin]){
+            //disable attemptEView
+            [_attemptEView setUserInteractionEnabled:NO];
+            //increment our attemptCount
+            attemptCount = attemptCount+1;
+            //enable our attemptFView
+            [_attemptFView setUserInteractionEnabled:YES];
+            
+            if ([defaults integerForKey:@"randomHintsNow"] == 1){
+                //handle 'random' visual queues
+            }
+            else {
+                //handle not 'random' visual queues
+            }
+        }
+        
+        //WIN SCENARIO
+        else {
+            //the win scenario closeDoors is handled by the didWin method
+            
+            //show our player the hidden code
+            codeCover.alpha = 0;
+        }
+    }
+    
+    ///////////////////////////////////////////// ATTEMPT 6 ///////////////////////////////////////////////////
+    else if (attemptCount == 6){
+        //create our hole UIImageViews that hold our selection to pass to the compareCodeAnswer method
+        UIImageView *holeOne = [[UIImageView alloc]initWithImage:[_holeOneF imageForState:UIControlStateSelected]];
+        UIImageView *holeTwo = [[UIImageView alloc]initWithImage:[_holeTwoF imageForState:UIControlStateSelected]];
+        UIImageView *holeThree = [[UIImageView alloc]initWithImage:[_holeThreeF imageForState:UIControlStateSelected]];
+        UIImageView *holeFour = [[UIImageView alloc]initWithImage:[_holeFourF imageForState:UIControlStateSelected]];
+        
+        //send our hole UIImageViews to be compared to the code
+        [self compareCodeAnswerOne:holeOne answerTwo:holeTwo answerThree:holeThree answerFour:holeFour];
+        
+        //and now we set our row hint images to the returned hint1-4 images
+        [hintOneF setImage: hint1.image];
+        [hintTwoF setImage: hint2.image];
+        [hintThreeF setImage: hint3.image];
+        [hintFourF setImage: hint4.image];
+        
+        //since this is the last attempt we know we will turn off attemptFView so lets do that now
+        [_attemptFView setUserInteractionEnabled:NO];
+        
+        //check for a win. if the player did not win we disable all the row6 buttons, display the playAgainButton, and set all the row6 hole smileys to sad faces. else, the player did win, so we show the code
+        if (![self didWin]){
+            
+            //show youLose UIImageView and keep the code hidden
+            //lets animate the youLose UIImageView to fade in to make the transition nicer
+            //            [self.view addSubview:youLose];
+            
+            //last attempt and did not win, lets do our closeDoors
+            [self closeDoors];
+            
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                                 //youLose.alpha = 1;
+                             }
+                             completion:^(BOOL finished) {
+                             }];
+            
+            codeCover.alpha = 0;
+            
+            //playAgainButton
+            
+        }
+        
+        //WIN SCENARIO
+        else {
+            //the win scenario closeDoors is handled by the didWin method
+            
+            //disable our attemptFView
+            [_attemptFView setUserInteractionEnabled:NO];
+            
+            codeCover.alpha = 0;
+        }
+    }
+    
+}
+// compare submitted code with secret code
+// if there is a perfect match for a hole make the hint#'s image hintPerfect
+// if the color is in the code but in the wrong position make the hint#'s image hintColor
+// if the hole does not match set the hnt#'s image to nil
+- (void)compareCodeAnswerOne:(UIImageView *)one answerTwo:(UIImageView *)two answerThree:(UIImageView *)three answerFour:(UIImageView *)four {
+    
+    // set up containers
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *hintImages = [[NSMutableArray alloc]initWithCapacity:4];
+    NSMutableArray *randomHintImages = [[NSMutableArray alloc]initWithCapacity:4];
+    
+    // reset hint images
+    hint1.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hint2.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hint3.image = [UIImage imageNamed:@"hintEmpty.png"];
+    hint4.image = [UIImage imageNamed:@"hintEmpty.png"];
+    
+    // ivars
+    BOOL codeOneAnswered = NO;
+    BOOL codeTwoAnswered = NO;
+    BOOL codeThreeAnswered = NO;
+    BOOL codeFourAnswered = NO;
+    
+    BOOL answerOneDone = NO;
+    BOOL answerTwoDone = NO;
+    BOOL answerThreeDone = NO;
+    BOOL answerFourDone = NO;
+    
+    UIImageView *hintPerfect = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"HintPerfect.png"]];
+    UIImageView *hintColor = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"HintColor.png"]];
+    
+    // if randomHintToggle is on then randomize the display of hints
+    if([defaults integerForKey:@"randomHintsToggle"] == 1){
+        // check for perfect matches. one hint given per submitted codeAnswer
+        if (one.image == codeOne.image){
+            [hintImages addObject:hintPerfect.image];
+            codeOneAnswered = YES;
+            answerOneDone = YES;
+        }
+        
+        if (two.image == codeTwo.image){
+            [hintImages addObject:hintPerfect.image];
+            codeTwoAnswered = YES;
+            answerTwoDone = YES;
+        }
+        
+        if (three.image == codeThree.image){
+            [hintImages addObject:hintPerfect.image];
+            codeThreeAnswered = YES;
+            answerThreeDone = YES;
+        }
+        
+        if (four.image == codeFour.image){
+            [hintImages addObject:hintPerfect.image];
+            codeFourAnswered = YES;
+            answerFourDone = YES;
+        }
+        
+        // check for imperfect color matches
+        // each secret code only responds until its been answered
+        
+        ////////// one.image ///////////////
+        if ((answerOneDone == NO) && (codeTwoAnswered == NO)){
+            if ((codeTwoAnswered == NO) && (one.image == codeTwo.image)){
+                [hintImages addObject:hintColor.image];
+                codeTwoAnswered = YES;
+                answerOneDone = YES;
+            }
+        }
+        if ((answerOneDone == NO) && (codeThreeAnswered == NO)){
+            if ((codeThreeAnswered == NO) && (one.image == codeThree.image)) {
+                [hintImages addObject:hintColor.image];
+                codeThreeAnswered = YES;
+                answerOneDone = YES;
+            }
+        }
+        if ((answerOneDone == NO) && (codeFourAnswered == NO)){
+            if ((codeFourAnswered == NO) && (one.image == codeFour.image)){
+                [hintImages addObject:hintColor.image];
+                codeFourAnswered = YES;
+                answerOneDone = YES;
+            }
+        }
+        
+        /////////////// two.image //////////////////
+        if ((answerTwoDone == NO) && (codeOneAnswered == NO)){
+            if ((codeOneAnswered == NO) && (two.image == codeOne.image)){
+                [hintImages addObject:hintColor.image];
+                codeOneAnswered = YES;
+                answerTwoDone = YES;
+            }
+        }
+        
+        if ((answerTwoDone == NO) && (codeThreeAnswered == NO)){
+            if ((codeThreeAnswered == NO) && (two.image == codeThree.image)){
+                [hintImages addObject:hintColor.image];
+                codeThreeAnswered = YES;
+                answerTwoDone = YES;
+            }
+        }
+        
+        if ((answerTwoDone == NO) && (codeFourAnswered == NO)){
+            if ((codeFourAnswered == NO) && (two.image == codeFour.image)){
+                [hintImages addObject:hintColor.image];
+                codeFourAnswered = YES;
+                answerTwoDone = YES;
+            }
+        }
+        
+        ////////////// three.image //////////////
+        if ((answerThreeDone == NO) && (codeOneAnswered == NO)){
+            if ((codeOneAnswered == NO) && (three.image == codeOne.image)){
+                [hintImages addObject:hintColor.image];
+                codeOneAnswered = YES;
+                answerThreeDone = YES;
+            }
+        }
+        
+        if ((answerThreeDone == NO) && (codeTwoAnswered == NO)){
+            if ((codeTwoAnswered == NO) && (three.image == codeTwo.image)){
+                [hintImages addObject:hintColor.image];
+                codeTwoAnswered = YES;
+                answerThreeDone = YES;
+            }
+        }
+        
+        if ((answerThreeDone == NO) && (codeFourAnswered == NO)){
+            if ((codeFourAnswered == NO) && (three.image == codeFour.image)){
+                [hintImages addObject:hintColor.image];
+                codeFourAnswered = YES;
+                answerThreeDone = YES;
+            }
+        }
+        
+        //////////////// four.image //////////////
+        if ((answerFourDone == NO) && (codeOneAnswered == NO)){
+            if ((codeOneAnswered == NO) && (four.image == codeOne.image)){
+                [hintImages addObject:hintColor.image];
+                codeOneAnswered = YES;
+                answerFourDone = YES;
+            }
+        }
+        
+        if ((answerFourDone == NO) && (codeTwoAnswered == NO)){
+            if ((codeTwoAnswered == NO) && (four.image == codeTwo.image)){
+                [hintImages addObject:hintColor.image];
+                codeTwoAnswered = YES;
+                answerFourDone = YES;
+            }
+        }
+        
+        if ((answerFourDone == NO) && (codeThreeAnswered == NO)){
+            if ((codeThreeAnswered == NO) && (four.image == codeThree.image)){
+                [hintImages addObject:hintColor.image];
+                codeThreeAnswered = YES;
+                answerFourDone = YES;
+            }
+        }
+        
+        // since randomHintsToggle on
+        // sort hints so hintPerfects are returned first
+        for (int i = 0; i < hintImages.count; i++){
+            if ([hintImages objectAtIndex:i] == hintPerfect.image) {
+                [randomHintImages addObject:[hintImages objectAtIndex:i]];
+            }
+        }
+        // and then add hintColor
+        for (int i = 0; i < hintImages.count; i++) {
+            if ([hintImages objectAtIndex:i] == hintColor.image) {
+                [randomHintImages addObject:[hintImages objectAtIndex:i]];
+            }
+        }
+        
+        // randomHintImages array holds any hints
+        // if there are no elements in array disable submit button, the round is over
+        if (randomHintImages.count == 0) {
+            [_buttonSubmit setUserInteractionEnabled:NO];
+            return;
+        }
+        
+        // if array is not empty fill our hints appropriately
+        else if (randomHintImages.count == 1) {
+            [hint1 setImage:[randomHintImages objectAtIndex:0]];
+        } else if (randomHintImages.count == 2){
+            [hint1 setImage:[randomHintImages objectAtIndex:0]];
+            [hint2 setImage:[randomHintImages objectAtIndex:1]];
+        } else if (randomHintImages.count == 3){
+            [hint1 setImage:[randomHintImages objectAtIndex:0]];
+            [hint2 setImage:[randomHintImages objectAtIndex:1]];
+            [hint3 setImage:[randomHintImages objectAtIndex:2]];
+        } else if (randomHintImages.count == 4){
+            [hint1 setImage:[randomHintImages objectAtIndex:0]];
+            [hint2 setImage:[randomHintImages objectAtIndex:1]];
+            [hint3 setImage:[randomHintImages objectAtIndex:2]];
+            [hint4 setImage:[randomHintImages objectAtIndex:3]];
+        }
+    }
+    
+    // memory cleanup
+    [hintImages removeAllObjects];
+    [randomHintImages removeAllObjects];
+    
+    // randomHintsToggle off, do not randomize hints
+    if ([defaults integerForKey:@"randomHintToggle"] == 0 || nil) {
+        // compare code values for perfect matches
+        if (one.image == codeOne.image){
+            [hintImages addObject:hintPerfect.image];
+            codeOneAnswered = YES;
+            answerOneDone = YES;
+            hint1.image = hintPerfect.image;
+        }
+        
+        if (two.image == codeTwo.image){
+            [hintImages addObject:hintPerfect.image];
+            codeTwoAnswered = YES;
+            answerTwoDone = YES;
+            hint2.image = hintPerfect.image;
+        }
+        
+        if (three.image == codeThree.image){
+            [hintImages addObject:hintPerfect.image];
+            codeThreeAnswered = YES;
+            answerThreeDone = YES;
+            hint3.image = hintPerfect.image;
+        }
+        
+        if (four.image == codeFour.image){
+            [hintImages addObject:hintPerfect.image];
+            codeFourAnswered = YES;
+            answerFourDone = YES;
+            hint4.image = hintPerfect.image;
+        }
+        
+        // compare code values for color matches
+        /////////// one.image ////////////
+        if ((answerOneDone == NO) && (answerTwoDone == NO)){
+            if (one.image == codeTwo.image) {
+                [hintImages addObject:hintColor.image];
+                codeTwoAnswered = YES;
+                answerOneDone = YES;
+                hint1.image = hintColor.image;
+            }
+        }
+        
+        if ((answerOneDone == NO) && (codeThreeAnswered == NO)){
+            if (one.image == codeThree.image){
+                [hintImages addObject:hintColor.image];
+                codeThreeAnswered = YES;
+                answerOneDone = YES;
+                hint1.image = hintColor.image;
+            }
+        }
+        
+        if ((answerOneDone == NO) && (codeFourAnswered == NO)){
+            if (one.image == codeFour.image){
+                [hintImages addObject:hintColor.image];
+                codeFourAnswered = YES;
+                answerOneDone = YES;
+                hint1.image = hintColor.image;
+            }
+        }
+        
+        //////////// two.image ///////////////
+        if ((answerTwoDone == NO) && (codeOneAnswered == NO)){
+            if (two.image == codeOne.image){
+                [hintImages addObject:hintColor.image];
+                codeOneAnswered = YES;
+                answerTwoDone = YES;
+                hint2.image = hintColor.image;
+            }
+        }
+        
+        if ((answerTwoDone == NO) && (codeThreeAnswered == NO)){
+            if (two.image == codeThree.image){
+                [hintImages addObject:hintColor.image];
+                codeThreeAnswered = YES;
+                answerTwoDone = YES;
+                hint2.image = hintColor.image;
+            }
+        }
+        
+        if ((answerTwoDone == NO) && (codeFourAnswered == NO)){
+            if (two.image == codeFour.image){
+                [hintImages addObject:hintColor.image];
+                codeFourAnswered = YES;
+                answerTwoDone = YES;
+                hint2.image = hintColor.image;
+            }
+        }
+        
+        ////////////// three.image /////////////
+        if ((answerThreeDone == NO) && (codeOneAnswered == NO)){
+            if (three.image == codeOne.image){
+                [hintImages addObject:hintColor.image];
+                codeOneAnswered = YES;
+                answerThreeDone = YES;
+                hint3.image = hintColor.image;
+            }
+        }
+        
+        if ((answerThreeDone == NO) && (codeTwoAnswered == NO)){
+            if ((codeTwoAnswered == NO) && (three.image == codeTwo.image)){
+                [hintImages addObject:hintColor.image];
+                codeTwoAnswered = YES;
+                answerThreeDone = YES;
+                hint3.image = hintColor.image;
+            }
+        }
+        
+        if ((answerThreeDone == NO) && (codeFourAnswered == NO)){
+            if (three.image == codeFour.image){
+                [hintImages addObject:hintColor.image];
+                codeFourAnswered = YES;
+                answerThreeDone = YES;
+                hint3.image = hintColor.image;
+            }
+        }
+        
+        ///////////////// four.image //////////////
+        if ((answerFourDone == NO) && (codeOneAnswered == NO)){
+            if (four.image == codeOne.image){
+                [hintImages addObject:hintColor.image];
+                codeOneAnswered = YES;
+                answerFourDone = YES;
+                hint4.image = hintColor.image;
+            }
+        }
+        
+        if ((answerFourDone == NO) && (codeTwoAnswered == NO)){
+            if (four.image == codeTwo.image){
+                [hintImages addObject:hintColor.image];
+                codeTwoAnswered = YES;
+                answerFourDone = YES;
+                hint4.image = hintColor.image;
+            }
+        }
+        
+        if ((answerFourDone == NO) && (codeThreeAnswered == NO)){
+            if (four.image == codeThree.image){
+                [hintImages addObject:hintColor.image];
+                codeThreeAnswered = YES;
+                answerFourDone = YES;
+                hint4.image = hintColor.image;
+            }
+        }
+    }
+    
+}
+// check win scenario by comparing hints for perfection
+- (BOOL)didWin {
+    // conainer for our hintPerfect for comparison
+    UIImageView *hintPerfect = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"HintPerfect.png"]];
+
+    // check to see if any hints are not perfect
+    // if any hints are not perfect its not a win
+    if ((hint1.image != hintPerfect.image) || (hint2.image != hintPerfect.image) || (hint3.image != hintPerfect.image) || (hint4.image != hintPerfect.image)) {
+        return NO;
+    }
+    // win scenario
+    else {
+        // youWin UIImageView?
+        // youWin.alpha = 1;
+        // [self.view addSubview:youWin]
+        
+        // disable all rows
+        [_attemptAView setUserInteractionEnabled:NO];
+        [_attemptBView setUserInteractionEnabled:NO];
+        [_attemptCView setUserInteractionEnabled:NO];
+        [_attemptDView setUserInteractionEnabled:NO];
+        [_attemptEView setUserInteractionEnabled:NO];
+        [_attemptFView setUserInteractionEnabled:NO];
+        
+        // reset current game
+        currentGame = NO;
+        
+        [self closeDoors];
+        
+        [UIView animateWithDuration:0.0
+                         animations:^{
+                             //youWin.alpha = 1
+                         } completion:^(BOOL finished) {
+                             //
+                         }];
+        return YES;
+    }
+}
+
+- (void)closeDoors {
+    // show gameOverView
+    gameOverView.hidden = NO;
+    // insert gameOverView on top of topDoorView
+    [self.view insertSubview:gameOverView aboveSubview:topDoorView];
+    // begin our animation by closing the doors
+    [UIImageView animateWithDuration:0.2
+                               delay: 1.0
+                             options: UIViewAnimationOptionCurveLinear
+                          animations:^{
+                              // 4inch
+                              if([[UIScreen mainScreen] bounds].size.height == 568){
+                                  gameOverView.frame = CGRectMake(80, 239, 160, 90);
+                                  topDoorView.frame = CGRectMake(0, 0, 320, 284);
+                                  botDoorView.frame = CGRectMake(0, 284, 320, 284);
+                              }
+                              // 3.5inch
+                              else{
+                                  gameOverView.frame = CGRectMake(80, 195, 160, 90);
+                                  topDoorView.frame = CGRectMake(0, 0, 320, 240);
+                                  botDoorView.frame = CGRectMake(0, 240, 320, 240);
+                              }
+                          }
+                          completion:^(BOOL finished){
+                              // when the doors come down they bounce up a bit, then come back down for a final close
+                              // first for the bounce up with a little bit of hang time
+                              [UIImageView animateWithDuration:0.1
+                                                         delay: 0.0
+                                                       options: UIViewAnimationOptionCurveEaseIn
+                                                    animations:^{
+                                                        // 4inch
+                                                        if([[UIScreen mainScreen] bounds].size.height == 568){
+                                                            gameOverView.frame = CGRectMake(80, 239-5, 160, 90);
+                                                            topDoorView.frame = CGRectMake(0, 0, 320-5, 284);
+                                                            botDoorView.frame = CGRectMake(0, 284, 320+5, 284);
+                                                        }
+                                                        // 3.5inch
+                                                        else{
+                                                            gameOverView.frame = CGRectMake(80, 195-5, 160, 90);
+                                                            topDoorView.frame = CGRectMake(0, 0-5, 320, 240);
+                                                            botDoorView.frame = CGRectMake(0, 240+5, 320, 240);
+                                                        }
+                                                    }
+                                                    completion:^(BOOL finished){
+                                                        //and now for our final close
+                                                        [UIImageView animateWithDuration:0.1
+                                                                                   delay: 0.0
+                                                                                 options: UIViewAnimationOptionCurveEaseOut
+                                                                              animations:^{
+                                                                                  // 4inch
+                                                                                  if([[UIScreen mainScreen] bounds].size.height == 568){
+                                                                                      gameOverView.frame = CGRectMake(80, 239, 160, 90);
+                                                                                      topDoorView.frame = CGRectMake(0, 0, 320, 284);
+                                                                                      botDoorView.frame = CGRectMake(0, 284, 320, 284);
+                                                                                  }
+                                                                                  // 3.5 inch
+                                                                                  else{
+                                                                                      gameOverView.frame = CGRectMake(80, 195, 160, 90);
+                                                                                      topDoorView.frame = CGRectMake(0, 0, 320, 240);
+                                                                                      botDoorView.frame = CGRectMake(0, 240, 320, 240);
+                                                                                  }
+                                                                              }
+                                                                              completion:^(BOOL finished){}];
+                                                    }];
+                          }];
+}
 
 // view difficulty panel
 - (IBAction)buttonDifficulty:(id)sender {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults integerForKey:@"duplicateColorToggle"] == 1) {
+        [buttonAllowDuplicates.imageView setImage:[UIImage imageNamed:@"ToggleOn.png" ]];
+    } else {
+        [buttonAllowDuplicates.imageView setImage:[UIImage imageNamed:@"ToggleOff.png" ]];
+    }
+    if ([defaults integerForKey:@"randomHintToggle"] == 1) {
+        [buttonRandomizeHints.imageView setImage:[UIImage imageNamed:@"ToggleOn.png"]];
+    } else {
+        [buttonRandomizeHints.imageView setImage:[UIImage imageNamed:@"ToggleOff.png"]];
+    }
     
     [UIView transitionWithView:centerPanelView
                       duration:0.5
@@ -544,6 +1292,8 @@ int attemptCount = 1;
 - (IBAction)buttonMenu:(id)sender {
     // hide our top and bot panels
     [self hideTopAndBot];
+    // open doors
+    [self openDoors];
     // show centerPanelHome
     centerPanelHome.hidden = NO;
     // hide centerPanelPlay
