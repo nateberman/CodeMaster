@@ -342,6 +342,42 @@ int attemptCount = 1;
     return [imagesArray objectAtIndex:(arc4random() % imagesArray.count)];
 }
 
+// animate top and bot panels for gameplay
+- (void)showTopAndBot {
+    // slide top and bot panels in to view
+    [UIImageView animateWithDuration:0.3
+                               delay:0.0
+                             options:UIViewAnimationOptionCurveEaseOut
+                          animations:^{
+                              // 4inch screen
+                              if([[UIScreen mainScreen] bounds].size.height == 568){
+                                  topPanelView.frame = CGRectMake(13, 0, 294, 91);
+                                  botPanelView.frame = CGRectMake(13, 477, 294, 91);
+                              }
+                              // 3.5inch screen
+                              else {
+                                  topPanelView.frame = CGRectMake(13, 0, 294, 91);
+                                  botPanelView.frame = CGRectMake(13, 390, 294, 91);
+                              }
+                          } completion:^(BOOL finished) {
+                              // add a bounce
+                             [UIImageView animateWithDuration:0.2
+                                                        delay:0.1
+                                                      options:UIViewAnimationOptionCurveEaseOut
+                                                   animations:^{
+                                                       topPanelView.frame = CGRectMake(13, -5, 294, 91);
+                                                       botPanelView.frame = CGRectMake(13, botPanelView.frame.origin.y+5, 294, 91);
+                                                   } completion:^(BOOL finished) {
+                                                       //
+                                                   }];
+                          }];
+}
+
+// audio effect
+- (void)swoosh {
+    
+}
+
 // add some pizazz to the background
 - (void)randomLight {
     
