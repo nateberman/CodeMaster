@@ -44,11 +44,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Il8-PE-v1h" userLabel="Button - Back">
                                                 <rect key="frame" x="13" y="10" width="73" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Back">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="buttonBack:" destination="vXZ-lx-hvc" eventType="touchDragOutside" id="EoB-dj-Q4R"/>
+                                                    <action selector="buttonBack:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RtH-ak-8hP"/>
                                                 </connections>
                                             </button>
                                         </subviews>

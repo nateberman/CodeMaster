@@ -238,6 +238,82 @@ int attemptCount = 1;
     [self swoosh];
 }
 
+// view tutorial panel
+- (IBAction)buttonTutorial:(id)sender {
+    
+    [UIView transitionWithView:centerPanelView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        centerPanelHome.hidden = YES;
+                        centerPanelTutorial.hidden = NO;
+                        centerPanelActive = centerPanelTutorial;
+                    } completion:^(BOOL finished) {
+                        // audio anouncement
+                        // NSString to be turned into NSURL containing audio file path
+                        NSString *audioPath;
+                        // select sound
+                        audioPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"tutorial"] ofType:@"mp3"];
+                        // create NSURL and pass file with audio path
+                        NSURL *url;
+                        url = [NSURL fileURLWithPath:audioPath];
+                        // accessing a variable from outside the method _audioPlayer
+                        // allocate and initiate our audioPlayer with contents of NSURL we created
+                        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:NULL];
+                        // play sound
+                        [_audioPlayer play];
+                    }];
+    [self swoosh];
+}
+
+// view credits panel
+- (IBAction)buttonCredits:(id)sender {
+    
+    [UIView transitionWithView:centerPanelView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        centerPanelHome.hidden = YES;
+                        centerPanelCredits.hidden = NO;
+                        centerPanelActive = centerPanelCredits;
+                    } completion:^(BOOL finished) {
+                        // audio anouncement
+                        // NSString to be turned into NSURL containing audio file path
+                        NSString *audioPath;
+                        // select sound
+                        audioPath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"credits"] ofType:@"mp3"];
+                        // create NSURL and pass file with audio path
+                        NSURL *url;
+                        url = [NSURL fileURLWithPath:audioPath];
+                        // accessing a variable from outside the method _audioPlayer
+                        // allocate and initiate our audioPlayer with contents of NSURL we created
+                        _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url error:NULL];
+                        // play sound
+                        [_audioPlayer play];
+                    }];
+    [self swoosh];
+}
+
+// all important back button
+- (IBAction)buttonBack:(id)sender {
+    // if we're leaving play view retract top and bot panels
+    if (centerPanelActive == centerPanelPlay){
+        [self hideTopAndBot];
+    }
+    
+    // centerPanel flip animation
+    [UIView transitionWithView:centerPanelView
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromTop
+                    animations:^{
+                        centerPanelActive.hidden = YES;
+                        centerPanelHome.hidden = NO;
+                    } completion:^(BOOL finished) {
+                        //
+                    }];
+    [self swoosh];
+}
+
 // set points of user interaction
 // reset image states
 // create new secret code
@@ -461,6 +537,108 @@ int attemptCount = 1;
 // add some pizazz to the background
 - (void)randomLight {
     
+}
+
+#pragma mark CHOICE BUTTONS
+- (IBAction)choiceOneButton:(id)sender {
+    // check to see if choice is already selected
+    // if not selected deselect any other buttons to set focus
+    // set selectedImage's image to the button's UIControlStateSelected image and set the button state to selected
+    if(_choiceOneButton.selected == NO) {
+        [self deselectChoices];
+        selectedImage.image = [_choiceOneButton imageForState:UIControlStateSelected];
+        _choiceOneButton.selected = YES;
+    }
+    // if the button is already selected turn off the selection and clear the selectedImage
+    else {
+        _choiceOneButton.selected = NO;
+        selectedImage.image = nil;
+    }
+}
+- (IBAction)choiceTwoButton:(id)sender {
+    // check to see if choice is already selected
+    // if not selected deselect any other buttons to set focus
+    // set selectedImage's image to the button's UIControlStateSelected image and set the button state to selected
+    if(_choiceTwoButton.selected == NO) {
+        [self deselectChoices];
+        selectedImage.image = [_choiceTwoButton imageForState:UIControlStateSelected];
+        _choiceTwoButton.selected = YES;
+    }
+    // if the button is already selected turn off the selection and clear the selectedImage
+    else {
+        _choiceTwoButton.selected = NO;
+        selectedImage.image = nil;
+    }
+}
+- (IBAction)choiceThreeButton:(id)sender {
+    // check to see if choice is already selected
+    // if not selected deselect any other buttons to set focus
+    // set selectedImage's image to the button's UIControlStateSelected image and set the button state to selected
+    if(_choiceThreeButton.selected == NO) {
+        [self deselectChoices];
+        selectedImage.image = [_choiceThreeButton imageForState:UIControlStateSelected];
+        _choiceThreeButton.selected = YES;
+    }
+    // if the button is already selected turn off the selection and clear the selectedImage
+    else {
+        _choiceThreeButton.selected = NO;
+        selectedImage.image = nil;
+    }
+}
+- (IBAction)choiceFourButton:(id)sender {
+    // check to see if choice is already selected
+    // if not selected deselect any other buttons to set focus
+    // set selectedImage's image to the button's UIControlStateSelected image and set the button state to selected
+    if(_choiceFourButton.selected == NO) {
+        [self deselectChoices];
+        selectedImage.image = [_choiceFourButton imageForState:UIControlStateSelected];
+        _choiceFourButton.selected = YES;
+    }
+    // if the button is already selected turn off the selection and clear the selectedImage
+    else {
+        _choiceFourButton.selected = NO;
+        selectedImage.image = nil;
+    }
+}
+- (IBAction)choiceFiveButton:(id)sender {
+    // check to see if choice is already selected
+    // if not selected deselect any other buttons to set focus
+    // set selectedImage's image to the button's UIControlStateSelected image and set the button state to selected
+    if(_choiceFiveButton.selected == NO) {
+        [self deselectChoices];
+        selectedImage.image = [_choiceFiveButton imageForState:UIControlStateSelected];
+        _choiceFiveButton.selected = YES;
+    }
+    // if the button is already selected turn off the selection and clear the selectedImage
+    else {
+        _choiceFiveButton.selected = NO;
+        selectedImage.image = nil;
+    }
+}
+- (IBAction)choiceSixButton:(id)sender {
+    // check to see if choice is already selected
+    // if not selected deselect any other buttons to set focus
+    // set selectedImage's image to the button's UIControlStateSelected image and set the button state to selected
+    if(_choiceSixButton.selected == NO) {
+        [self deselectChoices];
+        selectedImage.image = [_choiceSixButton imageForState:UIControlStateSelected];
+        _choiceSixButton.selected = YES;
+    }
+    // if the button is already selected turn off the selection and clear the selectedImage
+    else {
+        _choiceSixButton.selected = NO;
+        selectedImage.image = nil;
+    }
+}
+
+// deselect choices to force focus on single selection
+- (void) deselectChoices {
+    _choiceOneButton.selected = NO;
+    _choiceTwoButton.selected = NO;
+    _choiceThreeButton.selected = NO;
+    _choiceFourButton.selected = NO;
+    _choiceFiveButton.selected = NO;
+    _choiceSixButton.selected = NO;
 }
 
 #pragma mark HOLE BUTTONS
