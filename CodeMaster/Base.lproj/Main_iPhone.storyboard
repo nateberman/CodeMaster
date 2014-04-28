@@ -598,16 +598,6 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="h0c-dK-P6y" userLabel="Button - Back">
-                                                <rect key="frame" x="-17" y="-18" width="73" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="buttonBack:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2SP-Um-uv4"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -693,23 +683,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="91"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zQ3-Yd-OBo" userLabel="Button - Menu">
+                                        <rect key="frame" x="15" y="25" width="29" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="MenuButton.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonBack:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UoK-GE-I64"/>
+                                        </connections>
+                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="99i-H2-xuL" userLabel="codeOne">
-                                        <rect key="frame" x="50" y="20" width="45" height="45"/>
+                                        <rect key="frame" x="52" y="24" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dcA-5H-0Ck" userLabel="codeTwo">
-                                        <rect key="frame" x="93" y="20" width="45" height="45"/>
+                                        <rect key="frame" x="98" y="24" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="pgj-4o-zIl" userLabel="codeThree">
-                                        <rect key="frame" x="136" y="20" width="45" height="45"/>
+                                        <rect key="frame" x="142" y="24" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="znS-dL-Zwa" userLabel="codeFour">
-                                        <rect key="frame" x="179" y="20" width="45" height="45"/>
+                                        <rect key="frame" x="187" y="24" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NW0-e6-y3S" userLabel="codeCover">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LockedCodeCover.png" id="NW0-e6-y3S" userLabel="codeCover">
                                         <rect key="frame" x="50" y="20" width="174" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -812,7 +812,6 @@
                         <outlet property="botPanel" destination="rKj-1v-RFZ" id="pOS-NI-YZA"/>
                         <outlet property="botPanelView" destination="ckO-vY-pZy" id="H9h-6n-TOw"/>
                         <outlet property="buttonAllowDuplicates" destination="MFw-ii-T4e" id="eN8-4G-a5O"/>
-                        <outlet property="buttonCredits" destination="HaH-6y-fN5" id="ge2-Xg-0fz"/>
                         <outlet property="buttonDifficulty" destination="C7U-3V-rUM" id="ZpJ-SE-7hL"/>
                         <outlet property="buttonMenu" destination="PIz-Y0-uev" id="f1A-Wr-cwB"/>
                         <outlet property="buttonPlay" destination="4Mf-UJ-qiK" id="NX7-Od-sPm"/>
@@ -936,6 +935,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="LockedCodeCover.png" width="157" height="35"/>
+        <image name="MenuButton.png" width="29" height="32"/>
         <image name="botPanel.png" width="294" height="91"/>
         <image name="centerFieldView.png" width="294" height="301"/>
         <image name="hexBG-568h@2x.png.png" width="339" height="937"/>

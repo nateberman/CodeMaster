@@ -75,6 +75,10 @@
 		DEE3B307190EB80A00FDC284 /* credits.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B304190EB80A00FDC284 /* credits.mp3 */; };
 		DEE3B308190EB80A00FDC284 /* difficulty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B305190EB80A00FDC284 /* difficulty.mp3 */; };
 		DEE3B309190EB80A00FDC284 /* flip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B306190EB80A00FDC284 /* flip.mp3 */; };
+		DEE3B30C190F142000FDC284 /* LockedCodeCover.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B30A190F142000FDC284 /* LockedCodeCover.png */; };
+		DEE3B30D190F142000FDC284 /* LockedCodeCover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B30B190F142000FDC284 /* LockedCodeCover@2x.png */; };
+		DEE3B310190F142B00FDC284 /* MenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B30E190F142A00FDC284 /* MenuButton.png */; };
+		DEE3B311190F142B00FDC284 /* MenuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DEE3B30F190F142A00FDC284 /* MenuButton@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +166,10 @@
 		DEE3B304190EB80A00FDC284 /* credits.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = credits.mp3; sourceTree = "<group>"; };
 		DEE3B305190EB80A00FDC284 /* difficulty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = difficulty.mp3; sourceTree = "<group>"; };
 		DEE3B306190EB80A00FDC284 /* flip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flip.mp3; sourceTree = "<group>"; };
+		DEE3B30A190F142000FDC284 /* LockedCodeCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LockedCodeCover.png; sourceTree = "<group>"; };
+		DEE3B30B190F142000FDC284 /* LockedCodeCover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LockedCodeCover@2x.png"; sourceTree = "<group>"; };
+		DEE3B30E190F142A00FDC284 /* MenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButton.png; sourceTree = "<group>"; };
+		DEE3B30F190F142A00FDC284 /* MenuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuButton@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +277,10 @@
 		DEBC7EA2190D7DF80021C3AE /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				DEE3B30E190F142A00FDC284 /* MenuButton.png */,
+				DEE3B30F190F142A00FDC284 /* MenuButton@2x.png */,
+				DEE3B30A190F142000FDC284 /* LockedCodeCover.png */,
+				DEE3B30B190F142000FDC284 /* LockedCodeCover@2x.png */,
 				DEBC7EA3190D7E330021C3AE /* botPanel.png */,
 				DEBC7EA4190D7E330021C3AE /* botPanel@2x.png */,
 				DEBC7EA5190D7E330021C3AE /* buttonBlueHilight.png */,
@@ -412,6 +424,7 @@
 				DEBC7EE2190D7E330021C3AE /* buttonYellowHilight@2x.png in Resources */,
 				DEBC7ED5190D7E330021C3AE /* buttonOrangeHilight.png in Resources */,
 				DEE3B2F6190EB76F00FDC284 /* ToggleOff@2x.png in Resources */,
+				DEE3B30D190F142000FDC284 /* LockedCodeCover@2x.png in Resources */,
 				DEBC7EDC190D7E330021C3AE /* buttonRedNormal@2x.png in Resources */,
 				DEBC7ED2190D7E330021C3AE /* buttonGreenHilight@2x.png in Resources */,
 				DEE3B2FF190EB7A200FDC284 /* HintColor.png in Resources */,
@@ -420,6 +433,7 @@
 				DEBC7EE1190D7E330021C3AE /* buttonYellowHilight.png in Resources */,
 				DEBC7EE5190D7E330021C3AE /* centerFieldView.png in Resources */,
 				DEE3B303190EB7F800FDC284 /* tutorial.mp3 in Resources */,
+				DEE3B30C190F142000FDC284 /* LockedCodeCover.png in Resources */,
 				DEBC7EE4190D7E330021C3AE /* buttonYellowNormal@2x.png in Resources */,
 				DEE3B2FC190EB78F00FDC284 /* HintPerfect@2x.png in Resources */,
 				DEBC7EDF190D7E330021C3AE /* buttonTealNormal.png in Resources */,
@@ -440,6 +454,7 @@
 				DEBC7ECC190D7E330021C3AE /* botPanel@2x.png in Resources */,
 				DEBC7EF1190D7E330021C3AE /* topPanel.png in Resources */,
 				DEBC7ECE190D7E330021C3AE /* buttonBlueHilight@2x.png in Resources */,
+				DEE3B310190F142B00FDC284 /* MenuButton.png in Resources */,
 				DEE3B307190EB80A00FDC284 /* credits.mp3 in Resources */,
 				DEBC7EE0190D7E330021C3AE /* buttonTealNormal@2x.png in Resources */,
 				DEBC7ED6190D7E330021C3AE /* buttonOrangeHilight@2x.png in Resources */,
@@ -465,6 +480,7 @@
 				DEBC7E7E190D44280021C3AE /* Main_iPhone.storyboard in Resources */,
 				DEBC7E75190D44280021C3AE /* InfoPlist.strings in Resources */,
 				DEBC7EED190D7E330021C3AE /* hole.png in Resources */,
+				DEE3B311190F142B00FDC284 /* MenuButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

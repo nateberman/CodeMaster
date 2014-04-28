@@ -116,7 +116,7 @@ int attemptCount = 1;
     centerPanelDifficulty.hidden = YES;
     
     // hide debug view
-    devTestView.hidden = NO;
+    devTestView.hidden = YES;
     
     // configure Difficulty contents
     // allowDuplicates button
@@ -1102,7 +1102,7 @@ int attemptCount = 1;
 // reset number of attempts
 - (void)newGame {
     //set up our codeCover
-    codeCover.alpha = 0;
+    codeCover.alpha = 1;
     
     //lets turn on our 1st attemptView so the user can interact with the game
     [_attemptAView setUserInteractionEnabled:YES];
